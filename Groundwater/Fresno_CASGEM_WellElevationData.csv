@@ -1,0 +1,318 @@
+MasterSiteCode,LocalWellNumber,Date,MilitaryTime,NoMeasurement,QuestionableMeasurement,ReadingRP,ReadingWS,RPtoWS,RPElevation,GSElevation,WSElevation,GStoWS,MeasurementMethod,MeasurementAccuracy,CollectingCoopAgency,VoluntaryorCASGEM,Commentsh
+360361N1201857W001,22S16E12A002,10/17/2019,07:00,9 - Temporarily inaccessible,,,,,762.33,754.09,,,,,Pleasant Valley Water District,CASGEM,
+360361N1201857W001,22S16E12A002,4/9/2019,15:00,9 - Temporarily inaccessible,,,,,762.33,754.09,,,,,Pleasant Valley Water District,CASGEM,
+360361N1201857W001,22S16E12A002,11/8/2018,09:42,,6 - Other,368.8,0,368.8,754.09,754.09,385.29,368.8,ES - Electric sounder measurement,0.1 Ft,Pleasant Valley Water District,CASGEM,Original well inaccessible. Used nearby well with RP at GS.
+360361N1201857W001,22S16E12A002,4/12/2018,12:50,1 - Pumping,,,,,762.33,754.09,,,,,Pleasant Valley Water District,CASGEM,
+360361N1201857W001,22S16E12A002,11/14/2017,00:00,3 - Tape hung up,,,,,762.33,754.09,,,,,Pleasant Valley Water District,CASGEM,
+360361N1201857W001,22S16E12A002,3/17/2020,00:00,1 - Pumping,,,,,762.33,754.09,,,,,Pleasant Valley Water District,CASGEM,
+360866N1202272W001,21S16E22G001,10/17/2019,22:17,,,446.24,181.73,264.51,627.97,626.27,363.46,262.81,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+360866N1202272W001,21S16E22G001,4/9/2019,15:00,,1 - Pumping,646.07,0,646.07,627.97,626.27,-18.1,644.37,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+360866N1202272W001,21S16E22G001,11/8/2018,14:47,,,398.92,0,398.92,627.97,626.27,229.05,397.22,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+360866N1202272W001,21S16E22G001,4/12/2018,12:26,,,408.01,0,408.01,627.97,626.27,219.96,406.31,ES - Electric sounder measurement,0.01 Ft,Pleasant Valley Water District,CASGEM,No pump in well
+360866N1202272W001,21S16E22G001,11/14/2017,00:00,1 - Pumping,,,,,627.97,626.27,,,,,Pleasant Valley Water District,CASGEM,
+360866N1202272W001,21S16E22G001,3/17/2020,07:00,,,627.97,221.344,406.626,627.97,626.27,221.344,404.926,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361008N1202447W001,21S16E16K001,4/12/2018,12:06,,,429.45,0,429.45,599.71,598.69,170.26,428.43,ES - Electric sounder measurement,0.1 Ft,Pleasant Valley Water District,CASGEM,
+361008N1202447W001,21S16E16K001,11/14/2017,00:00,,,599.71,165.16,434.55,599.71,598.69,165.16,433.53,ES - Electric sounder measurement,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361008N1202447W001,21S16E16K001,11/8/2018,10:50,,,481.9,0,481.9,599.71,598.69,117.81,480.88,ES - Electric sounder measurement,0.1 Ft,Pleasant Valley Water District,CASGEM,
+361008N1202447W001,21S16E16K001,4/9/2019,15:00,9 - Temporarily inaccessible,,,,,599.71,598.69,,,,,Pleasant Valley Water District,CASGEM,
+361008N1202447W001,21S16E16K001,10/17/2019,07:00,9 - Temporarily inaccessible,,,,,599.71,598.69,,,,,Pleasant Valley Water District,CASGEM,
+361008N1202447W001,21S16E16K001,3/17/2020,00:00,1 - Pumping,,,,,599.71,598.69,,,,,Pleasant Valley Water District,CASGEM,
+361078N1202988W001,21S15E12Q002M,12/12/2011,00:00,,9 - Acoustical sounder,378,0,378,647.1,647.1,269.1,378,UNK - Unknown,Unknown,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,10/12/2020,15:30,,9 - Acoustical sounder,480,0,480,641.45,639.71,161.45,478.26,AS - Acoustic or sonic sounder,1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,3/18/2020,12:45,7 - Special/Other,,,,,641.45,639.71,,,,,Department of Water Resources,Voluntary,No access for sounder or tape.
+361078N1202988W001,21S15E12Q002M,10/30/2019,22:26,,9 - Acoustical sounder,469.9,0,469.9,641.45,639.71,171.55,468.16,AS - Acoustic or sonic sounder,1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,3/26/2019,18:42,2 - Pump house locked,,,,,641.45,639.71,,,,,Department of Water Resources,Voluntary,Pump house locked.
+361078N1202988W001,21S15E12Q002M,11/19/2018,19:46,,9 - Acoustical sounder,434.9,0,434.9,641.45,639.71,206.55,433.16,ES - Electric sounder measurement,0.1 Ft,Department of Water Resources,Voluntary,Need acoustic sounder to measure on south side of concrete pad.
+361078N1202988W001,21S15E12Q002M,3/20/2018,18:25,7 - Special/Other,,,,,641.45,639.71,,,,,Department of Water Resources,Voluntary,Special
+361078N1202988W001,21S15E12Q002M,10/20/2017,09:00,7 - Special/Other,,,,,641.45,639.71,,,,,Pleasant Valley Water District,Voluntary,temporarily inaccessible
+361078N1202988W001,21S15E12Q002M,4/11/2017,12:00,7 - Special/Other,,,,,647.1,647.1,,,,,Department of Water Resources,Voluntary,No Echo
+361078N1202988W001,21S15E12Q002M,2/24/2016,12:00,,9 - Acoustical sounder,410,0,410,647.1,647.1,237.1,410,UNK - Unknown,0.1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,10/27/2015,12:00,,9 - Acoustical sounder,413,0,413,647.1,647.1,234.1,413,UNK - Unknown,0.1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,2/23/2015,00:00,,9 - Acoustical sounder,410.6,0,410.6,647.1,647.1,236.5,410.6,AS - Acoustic or sonic sounder,0.1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,12/22/2009,00:00,,9 - Acoustical sounder,378,0,378,647.1,647.1,269.1,378,UNK - Unknown,Unknown,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,12/8/2010,00:00,,9 - Acoustical sounder,380,0,380,647.1,647.1,267.1,380,UNK - Unknown,Unknown,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,1/8/2013,12:00,7 - Special/Other,,,,,647.1,647.1,,,,,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,4/19/2013,12:00,,9 - Acoustical sounder,379,0,379,647.1,647.1,268.1,379,UNK - Unknown,0.1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,12/9/2013,12:00,,9 - Acoustical sounder,382,0,382,647.1,647.1,265.1,382,UNK - Unknown,0.1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,12/9/2014,12:00,,9 - Acoustical sounder,382,0,382,647.1,647.1,265.1,382,UNK - Unknown,0.1 Ft,Department of Water Resources,Voluntary,
+361078N1202988W001,21S15E12Q002M,4/9/2019,15:00,,,445.78,0,445.78,641.45,639.71,195.67,444.04,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361078N1202988W001,21S15E12Q002M,10/17/2019,07:00,,,461.37,180.1,281.27,641.45,639.71,360.18,279.53,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361078N1202988W001,21S15E12Q002M,3/17/2020,00:00,1 - Pumping,,,,,641.45,639.71,,,,,Pleasant Valley Water District,CASGEM,
+361078N1202988W001,21S15E12Q002M,11/8/2018,14:45,,,451.71,0,451.71,641.45,639.71,189.74,449.97,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361078N1202988W001,21S15E12Q002M,4/12/2018,11:46,,,429.2,0,429.2,641.45,639.71,212.25,427.46,ES - Electric sounder measurement,0.1 Ft,Pleasant Valley Water District,CASGEM,
+361078N1202988W001,21S15E12Q002M,11/14/2017,00:00,,8 - Oil or foreign substance in casing,641.45,202.54,438.91,641.45,639.71,202.54,437.17,ES - Electric sounder measurement,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361516N1203098W001,20S15E26Q001,11/14/2017,00:00,,,621.51,233.06,388.45,621.51,619.86,233.06,386.8,ES - Electric sounder measurement,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361516N1203098W001,20S15E26Q001,4/12/2018,09:09,,,367.95,0,367.95,621.51,619.86,253.56,366.3,ES - Electric sounder measurement,0.1 Ft,Pleasant Valley Water District,CASGEM,Measurement in pipe on north side; no pump in well
+361516N1203098W001,20S15E26Q001,11/8/2018,14:45,,1 - Pumping,406.67,0,406.67,621.51,619.86,214.84,405.02,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361516N1203098W001,20S15E26Q001,4/9/2019,15:00,,,397.28,0,397.28,621.51,619.86,224.23,395.63,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361516N1203098W001,20S15E26Q001,10/17/2019,07:00,9 - Temporarily inaccessible,,,,,621.51,619.86,,,,,Pleasant Valley Water District,CASGEM,
+361516N1203098W001,20S15E26Q001,3/17/2020,00:00,1 - Pumping,,,,,621.51,619.86,,,,,Pleasant Valley Water District,CASGEM,
+361579N1203362W001,20S15E27M001,10/17/2019,07:00,,,427,231.31,195.69,658.31,654.03,462.62,191.41,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361579N1203362W001,20S15E27M001,3/17/2020,07:00,,,658.31,230.735,427.575,658.31,654.03,230.735,423.295,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361579N1203362W001,20S15E27M001,4/9/2019,15:00,,1 - Pumping,576.93,0,576.93,658.31,654.03,81.38,572.65,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361579N1203362W001,20S15E27M001,11/9/2018,06:15,,6 - Other,439,0,439,658.31,654.03,219.31,434.72,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,Measurement taken from a nearby well.
+361579N1203362W001,20S15E27M001,11/8/2018,11:35,1 - Pumping,,,,,658.31,654.03,,,,,Pleasant Valley Water District,CASGEM,
+361579N1203362W001,20S15E27M001,4/12/2018,09:27,1 - Pumping,,,,,658.31,654.03,,,,,Pleasant Valley Water District,CASGEM,
+361579N1203362W001,20S15E27M001,11/14/2017,00:00,3 - Tape hung up,,,,,658.31,743.65,,,,,Pleasant Valley Water District,CASGEM,
+361875N1203282W001,20S15E15L001M,2/19/2015,00:00,7 - Special/Other,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,3/26/2019,17:28,4 - Can't get tape in casing,,,,,744.19,743.65,,,,,Department of Water Resources,Voluntary,Can't get tape in
+361875N1203282W001,20S15E15L001M,12/9/2014,12:00,0 - Measurement Discontinued,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,11/8/2018,20:19,9 - Temporarily inaccessible,,,,,744.19,743.65,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,3/19/2018,17:45,4 - Can't get tape in casing,,,,,744.19,743.65,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,10/17/2017,08:30,0 - Measurement Discontinued,,,,,744.19,743.65,,,,,Pleasant Valley Water District,Voluntary,measurement discontinued
+361875N1203282W001,20S15E15L001M,4/11/2017,12:00,0 - Measurement Discontinued,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,Measurement Discontinured
+361875N1203282W001,20S15E15L001M,12/9/2013,12:00,7 - Special/Other,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,4/19/2013,12:00,7 - Special/Other,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,1/8/2013,12:00,7 - Special/Other,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,12/12/2011,00:00,7 - Special/Other,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,12/7/2010,00:00,,9 - Acoustical sounder,439,0,439,743.1,743.1,304.1,439,UNK - Unknown,Unknown,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,12/21/2009,00:00,7 - Special/Other,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,10/27/2015,12:00,0 - Measurement Discontinued,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,2/24/2016,12:00,0 - Measurement Discontinued,,,,,743.1,743.1,,,,,Department of Water Resources,Voluntary,
+361875N1203282W001,20S15E15L001M,3/17/2020,07:00,,,744.19,256.381,487.809,744.19,743.65,256.381,487.269,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361875N1203282W001,20S15E15L001M,10/17/2019,07:00,,,486.79,257.4,229.39,744.19,743.65,514.8,228.85,TR - Electronic pressure transducer,0.01 Ft,Pleasant Valley Water District,CASGEM,
+361875N1203282W001,20S15E15L001M,4/9/2019,15:00,9 - Temporarily inaccessible,,,,,744.19,743.65,,,,,Pleasant Valley Water District,CASGEM,
+361875N1203282W001,20S15E15L001M,4/12/2018,09:49,1 - Pumping,,,,,744.19,743.65,,,,,Pleasant Valley Water District,CASGEM,
+361875N1203282W001,20S15E15L001M,11/14/2017,00:00,4 - Can't get tape in casing,,,,,744.19,743.65,,,,,Pleasant Valley Water District,CASGEM,
+364600N1200400W001,KRCDB25,3/25/2020,14:04,,,205.7,0,205.7,209.991,194.991,4.291,190.7,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364600N1200400W001,KRCDB25,10/23/2020,15:08,,,205.5,0,205.5,209.991,194.991,4.491,190.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364600N1200400W001,KRCDB25,3/12/2019,14:01,,,200,0,200,213,198,13,185,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364600N1200400W001,KRCDB25,10/9/2018,13:00,,,229,0,229,213,198,-16,214,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+364600N1200400W001,KRCDB25,3/12/2018,14:27,,,229,0,229,213,198,-16,214,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+364600N1200400W001,KRCDB25,10/9/2017,13:55,,,236,0,236,213,198,-23,221,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+364600N1200400W001,KRCDB25,4/14/2017,00:00,,,249,0,249,213,198,-36,234,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,10/19/2016,12:50,,,233,0,233,213,198,-20,218,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,3/14/2016,13:09,,,221,0,221,213,198,-8,206,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,10/12/2015,13:38,,,233,0,233,213,198,-20,218,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,3/24/2015,12:27,,,252,0,252,213,198,-39,237,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,10/13/2014,12:37,,,230,0,230,213,198,-17,215,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,4/21/2014,14:09,,,233,0,233,213,198,-20,218,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,10/7/2013,12:31,,,225,0,225,213,198,-12,210,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,4/22/2013,13:07,1 - Pumping,,,,,213,198,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,10/22/2012,12:43,,,209,0,209,213,198,4,194,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,4/26/2012,13:00,1 - Pumping,,,,,213,198,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,4/26/2012,13:00,1 - Pumping,,,,,213,198,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,10/26/2011,14:25,,,189,0,189,213,198,24,174,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364600N1200400W001,KRCDB25,10/23/2019,00:00,,,239,0,239,213,198,-26,224,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364700N1201000W001,KRCDB21,10/23/2020,16:08,,,203.3,0,203.3,197.889,197.889,-5.411,203.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364700N1201000W001,KRCDB21,3/25/2020,14:46,,,199.8,0,199.8,197.889,197.889,-1.911,199.8,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364700N1201000W001,KRCDB21,10/22/2019,14:45,,,199.2,0,199.2,199,199,-0.2,199.2,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364700N1201000W001,KRCDB21,3/12/2019,00:00,7 - Special/Other,,,,,199,199,,,,,Kings River Conservation District,CASGEM,permission revoked
+364700N1201000W001,KRCDB21,10/9/2018,00:00,7 - Special/Other,,,,,199,199,,,,,Kings River Conservation District,CASGEM,permission revoked
+364700N1201000W001,KRCDB21,3/12/2018,13:49,,,201.5,0,201.5,199,199,-2.5,201.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+364700N1201000W001,KRCDB21,10/9/2017,13:31,,,196,0,196,201,199,5,194,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+364700N1201000W001,KRCDB21,4/19/2017,00:00,,,225,0,225,199,199,-26,225,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,10/19/2016,12:28,,,204,0,204,199,199,-5,204,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,3/14/2016,12:46,,,196,0,196,199,199,3,196,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,10/12/2015,13:17,,,203,0,203,199,199,-4,203,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,3/24/2015,12:06,,,202,0,202,199,199,-3,202,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,10/13/2014,12:00,,,204,0,204,199,199,-5,204,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,4/21/2014,12:35,,,200,0,200,199,199,-1,200,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,10/7/2013,14:09,,,197,0,197,199,199,2,197,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,4/22/2013,12:45,,,197,0,197,199,199,2,197,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,10/22/2012,12:10,,,194,0,194,199,199,5,194,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,4/25/2012,11:30,,,168,0,168,199,199,31,168,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,10/26/2011,13:46,,,184,0,184,199,199,15,184,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+364700N1201000W001,KRCDB21,4/25/2012,11:30,,,168,0,168,199,199,31,168,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,10/26/2011,13:10,,,214,0,214,216,182,2,180,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,3/25/2020,16:02,,,214,0,214,179.428,179.428,-34.572,214,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+365300N1200900W001,KRCDB05,10/22/2019,00:00,3 - Tape hung up,,,,,200,182,,,,,Kings River Conservation District,CASGEM,
+365300N1200900W001,KRCDB05,3/14/2019,14:20,,,191.5,0,191.5,200,182,8.5,173.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+365300N1200900W001,KRCDB05,10/10/2018,11:28,,,243,0,243,200,182,-43,225,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+365300N1200900W001,KRCDB05,3/14/2018,13:40,,,217,0,217,200,182,-17,199,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+365300N1200900W001,KRCDB05,10/10/2017,11:04,,,230,0,230,216,182,-14,196,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+365300N1200900W001,KRCDB05,4/19/2017,13:08,,,229,0,229,216,182,-13,195,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,10/20/2016,09:58,,,243,0,243,216,182,-27,209,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,3/14/2016,15:32,,,200,0,200,216,182,16,166,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,10/13/2015,09:26,,,240,0,240,216,182,-24,206,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,3/24/2015,14:12,1 - Pumping,,,,,216,182,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,10/13/2014,14:58,,,240,0,240,216,182,-24,206,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,4/21/2014,15:43,,,232,0,232,216,182,-16,198,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,10/7/2013,15:32,,,233,0,233,216,182,-17,199,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,4/22/2013,15:42,1 - Pumping,,,,,216,182,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,10/23/2012,09:16,,,225,0,225,216,182,-9,191,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,4/24/2012,13:15,,,215,0,215,216,182,1,181,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,4/24/2012,13:15,,,215,0,215,216,182,1,181,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365300N1200900W001,KRCDB05,10/12/2020,15:50,,,222,0,222,179.428,179.428,-42.572,222,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+365700N1200500W001,KRCDA55,10/26/2020,16:31,,,234.3,0,234.3,186.271,184.271,-48.029,232.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+365700N1200500W001,KRCDA55,10/27/2011,09:55,,,216,0,216,189,187,-27,214,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,3/15/2019,11:41,1 - Pumping,,,,,189,187,,,,,Kings River Conservation District,CASGEM,
+365700N1200500W001,KRCDA55,10/11/2018,12:47,1 - Pumping,,,,,189,187,,,,,Kings River Conservation District,CASGEM,
+365700N1200500W001,KRCDA55,3/15/2018,13:00,,,221.5,0,221.5,189,187,-32.5,219.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+365700N1200500W001,KRCDA55,10/10/2017,14:28,,,230,0,230,189,187,-41,228,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+365700N1200500W001,KRCDA55,4/20/2017,00:00,,,223,0,223,189,187,-34,221,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,10/20/2016,13:47,,,235,0,235,189,187,-46,233,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,3/15/2016,12:03,,,222,0,222,189,187,-33,220,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,10/13/2015,11:06,1 - Pumping,,,,,189,187,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,3/25/2015,12:25,,,223,0,223,189,187,-34,221,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,10/15/2014,12:23,,,229,0,229,189,187,-40,227,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,4/23/2014,15:43,,,221,0,221,189,187,-32,219,ES - Electric sounder measurement,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,10/8/2013,14:03,,,220,0,220,189,187,-31,218,ES - Electric sounder measurement,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,4/23/2013,13:01,,,215,0,215,189,187,-26,213,ES - Electric sounder measurement,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,10/23/2012,10:41,,,215,0,215,189,187,-26,213,ES - Electric sounder measurement,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,4/24/2012,10:05,1 - Pumping,,,,,189,187,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,4/24/2012,10:05,1 - Pumping,,,,,189,187,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+365700N1200500W001,KRCDA55,10/29/2019,12:21,,,220.1,0,220.1,189,187,-31.1,218.1,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366040N1200027W001,KRCDMW02,3/17/2020,14:08,,,219,0,219,205.315,205.815,-13.685,219.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366040N1200027W001,KRCDMW02,10/19/2020,14:21,,,221.9,0,221.9,205.315,205.815,-16.585,222.4,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366040N1200027W001,KRCDMW02,3/15/2019,14:45,,,218,0,218,205.315,205.815,-12.685,218.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366040N1200027W001,KRCDMW02,10/11/2018,10:21,,,225,0,225,205.315,205.815,-19.685,225.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366040N1200027W001,KRCDMW02,10/25/2019,13:15,,,221.4,0,221.4,205.315,205.815,-16.085,221.9,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366048N1198718W001,KRCDMW03,10/25/2019,13:53,,,158.7,0,158.7,245.223,245.723,86.523,159.2,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366048N1198718W001,KRCDMW03,3/17/2020,13:55,,,157.5,0,157.5,245.223,245.723,87.723,158,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366048N1198718W001,KRCDMW03,10/11/2018,09:43,,,158,0,158,245.223,245.723,87.223,158.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366048N1198718W001,KRCDMW03,3/15/2019,13:47,,,153,0,153,245.223,245.723,92.223,153.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366048N1198718W001,KRCDMW03,10/5/2020,16:14,,,162.5,0,162.5,245.223,245.723,82.723,163,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,9/27/2010,00:00,,,144.8,0,144.8,174.8,173.6,30,143.6,UNK - Unknown,Unknown,JAMES IRRIGATION DISTRICT,Voluntary,
+366180N1201457W001,KRCDJID009,1/22/2010,00:00,,,123.7,0,123.7,174.8,173.6,51.1,122.5,UNK - Unknown,Unknown,JAMES IRRIGATION DISTRICT,Voluntary,
+366180N1201457W001,KRCDJID009,2/17/2009,00:00,,,120.1,0,120.1,174.8,173.6,54.7,118.9,UNK - Unknown,Unknown,JAMES IRRIGATION DISTRICT,Voluntary,
+366180N1201457W001,KRCDJID009,3/13/2018,14:20,,,143.7,0,143.7,174.8,173.6,31.1,142.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,10/8/2018,16:30,,,144.4,0,144.4,174.8,173.6,30.4,143.2,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,3/11/2019,14:30,,,134.4,0,134.4,174.8,173.6,40.4,133.2,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,10/15/2019,10:45,,,143.4,0,143.4,174.8,173.6,31.4,142.2,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,3/19/2020,17:30,,,152.8,0,152.8,174.8,173.6,22,151.6,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,10/19/2020,11:30,,,146.9,0,146.9,174.8,173.6,27.9,145.7,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,10/10/2017,09:45,,,142.2,0,142.2,174.8,173.6,32.6,141,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366180N1201457W001,KRCDJID009,4/10/2017,13:50,,,149.2,0,149.2,174.8,173.6,25.6,148,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,10/14/2016,17:30,,,164.3,0,164.3,174.8,173.6,10.5,163.1,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,10/12/2015,11:00,,,148.4,0,148.4,174.8,173.6,26.4,147.2,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,3/9/2015,10:05,,,151.7,0,151.7,174.8,173.6,23.1,150.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,10/24/2014,11:00,,,152.8,0,152.8,174.8,173.6,22,151.6,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,4/28/2014,15:05,,,158.3,0,158.3,174.8,173.6,16.5,157.1,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,10/17/2013,10:45,,,147.2,0,147.2,174.8,173.6,27.6,146,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,4/24/2013,09:00,1 - Pumping,,,,,174.8,173.6,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,10/10/2012,14:30,1 - Pumping,,,,,174.8,173.6,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,4/24/2012,10:00,,,124.6,0,124.6,174.8,173.6,50.2,123.4,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,4/24/2012,10:00,,,124.6,0,124.6,174.8,173.6,50.2,123.4,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,11/9/2011,08:15,,,130.7,0,130.7,174.8,173.6,44.1,129.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366180N1201457W001,KRCDJID009,3/17/2016,11:30,,,153.6,0,153.6,174.8,173.6,21.2,152.4,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366246N1202158W001,KRCDMW04,10/12/2018,00:00,,,88,0,88,163.815,164.315,75.815,88.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366246N1202158W001,KRCDMW04,3/20/2019,11:51,,,83,0,83,163.815,164.315,80.815,83.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366246N1202158W001,KRCDMW04,10/24/2019,15:00,,,87.3,0,87.3,163.815,164.315,76.515,87.8,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366246N1202158W001,KRCDMW04,3/17/2020,14:36,,,87.6,0,87.6,163.815,164.315,76.215,88.1,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366246N1202158W001,KRCDMW04,10/21/2020,15:07,,,90.8,0,90.8,163.815,164.315,73.015,91.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1199700W001,KRCDA36,10/26/2011,11:15,,,169,0,169,219,219,50,169,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,4/23/2012,13:50,,,163,0,163,219,219,56,163,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,4/23/2012,13:50,,,163,0,163,219,219,56,163,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,10/24/2012,13:49,,,177,0,177,219,219,42,177,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,4/23/2013,14:56,,,174,0,174,219,219,45,174,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,10/8/2013,15:40,,,179,0,179,219,219,40,179,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,4/24/2014,14:03,,,178,0,178,219,219,41,178,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,10/15/2014,13:32,,,186,0,186,219,219,33,186,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,3/26/2015,12:30,,,180,0,180,219,219,39,180,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,10/13/2015,14:35,,,187,0,187,219,219,32,187,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,3/15/2016,14:28,,,181,0,181,219,219,38,181,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,10/20/2016,14:53,,,190,0,190,219,219,29,190,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,5/4/2017,09:36,1 - Pumping,,,,,219,219,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1199700W001,KRCDA36,10/11/2017,14:49,,,192,0,192,219,219,27,192,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+366300N1199700W001,KRCDA36,3/15/2018,11:44,,,187.5,0,187.5,219,219,31.5,187.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1199700W001,KRCDA36,10/11/2018,16:00,,,198,0,198,219,219,21,198,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1199700W001,KRCDA36,3/22/2019,14:00,,,185.75,0,185.75,219,219,33.25,185.75,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1199700W001,KRCDA36,10/25/2019,11:53,,,193,0,193,219,219,26,193,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1199700W001,KRCDA36,3/19/2020,15:40,,,189,0,189,217.196,217.196,28.196,189,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1199700W001,KRCDA36,10/22/2020,13:23,,,198.7,0,198.7,217.196,217.196,18.496,198.7,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1200600W001,KRCDA26,10/24/2019,13:46,,,215.7,0,215.7,198,197,-17.7,214.7,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1200600W001,KRCDA26,10/21/2020,12:21,,,213.4,0,213.4,196.237,195.237,-17.163,212.4,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1200600W001,KRCDA26,3/20/2019,15:28,,,208.5,0,208.5,198,197,-10.5,207.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1200600W001,KRCDA26,10/11/2018,00:00,,,213.5,0,213.5,198,197,-15.5,212.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1200600W001,KRCDA26,3/14/2018,00:00,,,212,0,212,198,197,-14,211,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366300N1200600W001,KRCDA26,10/19/2017,10:20,,,233,0,233,215,197,-18,215,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+366300N1200600W001,KRCDA26,4/24/2017,00:00,,,220,0,220,215,197,-5,202,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,10/21/2016,12:42,,,227,0,227,215,197,-12,209,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,3/16/2016,12:50,,,217,0,217,215,197,-2,199,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,10/14/2015,13:40,,,235,0,235,215,197,-20,217,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,3/25/2015,14:52,,,213,0,213,215,197,2,195,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,10/15/2014,14:12,,,216,0,216,215,197,-1,198,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,4/23/2014,12:04,,,212,0,212,215,197,3,194,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,10/8/2013,15:12,,,220,0,220,215,197,-5,202,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,4/23/2013,15:32,,,209,0,209,215,197,6,191,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,10/24/2012,14:22,,,210,0,210,215,197,5,192,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,4/23/2012,15:30,,,196,0,196,215,197,19,178,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,4/23/2012,15:30,,,196,0,196,215,197,19,178,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,10/25/2011,14:09,,,204,0,204,215,197,11,186,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366300N1200600W001,KRCDA26,3/20/2020,14:44,,,202.4,0,202.4,196.237,195.237,-6.163,201.4,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366635N1202389W001,KRCDMW05,3/20/2019,11:41,,,65,0,65,159.231,159.731,94.231,65.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366635N1202389W001,KRCDMW05,10/12/2018,00:00,,,64.5,0,64.5,159.231,159.731,94.731,65,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366635N1202389W001,KRCDMW05,10/24/2019,14:49,,,65.8,0,65.8,159.231,159.731,93.431,66.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366635N1202389W001,KRCDMW05,10/19/2020,14:38,,,68,0,68,159.231,159.731,91.231,68.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366635N1202389W001,KRCDMW05,3/17/2020,14:45,,,62.4,0,62.4,159.231,159.731,96.831,62.9,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366700N1200800W001,KRCDA21,3/20/2020,13:14,,,195.5,0,195.5,202.593,199.593,7.093,192.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366700N1200800W001,KRCDA21,10/16/2020,15:02,,,219,0,219,202.593,199.593,-16.407,216,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366700N1200800W001,KRCDA21,3/20/2019,15:05,,,191.5,0,191.5,227,201,35.5,165.5,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366700N1200800W001,KRCDA21,10/12/2018,00:00,,,189,0,189,227,201,38,163,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+366700N1200800W001,KRCDA21,3/14/2018,10:05,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,
+366700N1200800W001,KRCDA21,10/11/2017,11:25,,,215,0,215,227,201,12,189,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+366700N1200800W001,KRCDA21,5/4/2017,10:31,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,10/21/2016,13:28,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,3/23/2016,09:08,,,199,0,199,227,201,28,173,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,10/14/2015,12:34,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,3/26/2015,11:00,,,198,0,198,227,201,29,172,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,10/15/2014,14:40,,,198,0,198,227,201,29,172,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,4/23/2014,11:48,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,10/9/2013,12:12,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,4/24/2013,09:46,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,10/24/2012,11:36,1 - Pumping,,,,,227,201,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,4/23/2012,12:30,,,173,0,173,227,201,54,147,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,10/25/2011,13:40,,,182,0,182,227,201,45,156,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,4/23/2012,12:30,,,173,0,173,227,201,54,147,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366700N1200800W001,KRCDA21,10/24/2019,12:55,,,177,0,177,227,201,50,151,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366768N1199160W001,KRCDFID041,10/14/2020,00:00,,,81,0,81,237.7,237,156.7,80.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366768N1199160W001,KRCDFID041,10/18/2011,10:00,,,51,0,51,237.7,237,186.7,50.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,3/1/2012,10:00,,,55,0,55,237.7,237,182.7,54.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,3/1/2012,10:00,,,55,0,55,237.7,237,182.7,54.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,11/20/2012,00:00,,,57,0,57,237.7,237,180.7,56.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,3/25/2013,00:00,,,60,0,60,237.7,237,177.7,59.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,10/25/2013,00:00,,,82,0,82,237.7,237,155.7,81.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,3/28/2014,00:00,1 - Pumping,,,,,237.7,237,,,,,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,10/24/2014,00:00,,,90,0,90,237.7,237,147.7,89.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,3/6/2015,00:00,,,78,0,78,237.7,237,159.7,77.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,10/2/2015,00:00,,,93.5,0,93.5,237.7,237,144.2,92.8,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,3/8/2016,00:00,,,81,0,81,237.7,237,156.7,80.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,10/5/2016,00:00,,,90,0,90,237.7,237,147.7,89.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,4/12/2017,00:00,,,81,0,81,237.7,237,156.7,80.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+366768N1199160W001,KRCDFID041,10/5/2017,00:00,,,80.5,0,80.5,237.7,237,157.2,79.8,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366768N1199160W001,KRCDFID041,3/9/2018,00:00,,,74.5,0,74.5,237.7,237,163.2,73.8,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366768N1199160W001,KRCDFID041,10/1/2018,00:00,,,87.5,0,87.5,237.7,237,150.2,86.8,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366768N1199160W001,KRCDFID041,3/29/2019,00:00,,,80,0,80,237.7,237,157.7,79.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366768N1199160W001,KRCDFID041,10/16/2019,00:00,,,83.5,0,83.5,237.7,237,154.2,82.8,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+366768N1199160W001,KRCDFID041,3/26/2020,00:00,,,78,0,78,237.7,237,159.7,77.3,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367100N1202400W001,KRCDA06,3/18/2020,00:00,0 - Measurement Discontinued,,,,,161.93,159.93,,,,,Kings River Conservation District,CASGEM,"Removed from Program, Collapsed well"
+367100N1202400W001,KRCDA06,10/1/2020,00:00,0 - Measurement Discontinued,,,,,161.93,159.93,,,,,Kings River Conservation District,CASGEM,"Removed from Program, Collapsed well"
+367100N1202400W001,KRCDA06,3/20/2019,00:00,9 - Temporarily inaccessible,,,,,164,162,,,,,Kings River Conservation District,CASGEM,
+367100N1202400W001,KRCDA06,10/12/2018,00:00,,,45,0,45,164,162,119,43,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367100N1202400W001,KRCDA06,3/13/2018,12:10,,,46,0,46,164,162,118,44,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367100N1202400W001,KRCDA06,10/11/2017,09:55,,,46,0,46,164,162,118,44,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,
+367100N1202400W001,KRCDA06,5/4/2017,12:03,,,47,0,47,164,162,117,45,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,10/21/2016,10:08,,,49,0,49,164,162,115,47,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,3/16/2016,10:09,,,51,0,51,164,162,113,49,AS - Acoustic or sonic sounder,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,10/14/2015,10:20,,,48,0,48,164,162,116,46,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,3/26/2015,09:43,,,49,0,49,164,162,115,47,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,10/16/2014,10:07,,,49,0,49,164,162,115,47,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,4/23/2014,10:18,,,49,0,49,164,162,115,47,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,10/9/2013,10:15,,,49,0,49,164,162,115,47,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,4/24/2013,13:15,,,49,0,49,164,162,115,47,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,10/24/2012,09:57,,,49,0,49,164,162,115,47,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,4/23/2012,10:00,,,48,0,48,164,162,116,46,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,4/23/2012,10:00,,,48,0,48,164,162,116,46,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,10/25/2011,10:35,,,46,0,46,164,162,118,44,OTH - Other,1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367100N1202400W001,KRCDA06,10/24/2019,10:05,7 - Special/Other,,,,,164,162,,,,,Kings River Conservation District,CASGEM,unable to sound--likely collapsed
+367144N1194477W001,KRCDAID013B,10/8/2020,00:00,,,22.63,0,22.63,397,395.6,374.37,21.23,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367144N1194477W001,KRCDAID013B,3/2/2020,00:00,,,20.17,0,20.17,397,395.6,376.83,18.77,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367144N1194477W001,KRCDAID013B,10/30/2019,00:00,,,23.38,0,23.38,397,395.6,373.62,21.98,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367144N1194477W001,KRCDAID013B,3/27/2019,10:15,,,16.12,0,16.12,397,395.6,380.88,14.72,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367144N1194477W001,KRCDAID013B,10/9/2018,08:42,1 - Pumping,,,,,397,395.6,,,,,Kings River Conservation District,CASGEM,
+367144N1194477W001,KRCDAID013B,3/15/2018,00:00,,,15.89,0,15.89,397,395.6,381.11,14.49,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367144N1194477W001,KRCDAID013B,10/23/2017,08:00,,,12.81,0,12.81,397,395.6,384.19,11.41,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,
+367144N1194477W001,KRCDAID013B,3/13/2017,10:41,,,13.89,0,13.89,397,395.6,383.11,12.49,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,10/19/2016,08:00,,,17.58,0,17.58,397,395.6,379.42,16.18,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,3/9/2016,10:43,,,19,0,19,397,395.6,378,17.6,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,10/23/2015,11:34,,,23.72,0,23.72,397,395.6,373.28,22.32,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,3/9/2015,10:43,,,19,0,19,397,395.6,378,17.6,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,10/14/2014,11:00,,,18.88,0,18.88,397,395.6,378.12,17.48,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,3/5/2014,00:00,,,13.75,0,13.75,397,395.6,383.25,12.35,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,10/15/2013,00:00,,,15.95,0,15.95,397,395.6,381.05,14.55,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,3/7/2013,00:00,,,15.33,0,15.33,397,395.6,381.67,13.93,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,10/15/2012,00:00,,,13,0,13,397,395.6,384,11.6,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,3/7/2012,08:00,,,11.08,0,11.08,397,395.6,385.92,9.68,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,10/27/2011,08:00,,,8.93,0,8.93,397,395.6,388.07,7.53,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
+367144N1194477W001,KRCDAID013B,3/7/2012,08:00,,,11.08,0,11.08,397,395.6,385.92,9.68,ES - Electric sounder measurement,0.1 Ft,Kings River Conservation District,CASGEM,Kings River Basin
