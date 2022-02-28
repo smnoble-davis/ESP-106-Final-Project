@@ -2,6 +2,10 @@
 library(tidyverse)
 library("stringr")
 library("ggplot2")
+install.packages("purrr")
+library("purrr")
+install.packages("dplyer")
+library("dplyr")
 
 #2009 DATA
 ag2009=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2009cropyear.csv")
@@ -287,7 +291,17 @@ ag2020_cntcrops=subset(ag2020,County%in%c("Fresno ","Kern ","Monterey ","Merced 
                          FALSE == str_detect(Crop.Name,"FLOWER ") &
                          FALSE == str_detect(Crop.Name,"PASTURE ") &
                          FALSE == str_detect(Crop.Name,"CHRISTMAS "))
+ag2020_cntcrops=rename(ag2020_cntcrops,Yield=Yield..Unit.Acre.,Price.P.U=Price..Dollars.Unit.,Value=Value..Dollars.)
+
+
+
 
 #Now combine all data frames based on shared columns (eg. County Name or County Code)
 #Notice the data frames have varying lengths, this may pose a problem for combining...
+#rbind all data frames together using 4 loop??
+
+
+allag=bind_rows(ag2009_cntcrops,ag2010_cntcrops,ag2011_cntcrops,ag2011_cntcrops,ag2012_cntcrops,ag2013_cntcrops,ag2014_cntcrops,ag2015_cntcrops,ag2016_cntcrops,ag2017_cntcrops,ag2018_cntcrops,ag2019_cntcrops,ag2020_cntcrops)
+
+
 
