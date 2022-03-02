@@ -396,8 +396,14 @@ YrCountyBoxplot=print(
         axis.ticks.x=element_blank(),
         axis.text.x=element_blank()))
 
-#Per the boxplot, even though there are seemingly outliers in the data, we won't remove these values because we're not assuming this is due to miscalculation.
-#These varying values are likely due to changes in environmental conditions.
+YrCountyBar=print(
+  ggplot(county_yr_total,aes(Year,Value_sum,fill=County))+
+    geom_bar(position="stack",stat="identity")+
+    scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
+    scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    ggtitle("Counties' Share of Gross Crop Production Value")+
+    theme(plot.title = element_text(face="bold"))
+)
 
 #Plot the county production values over time
 YrCountyLine=print(
@@ -413,7 +419,7 @@ YrCountyLine=print(
   
   
   
-  #NEED TO DO
+#NEED TO DO
 #Per the rubric, best if you're not hard coding file path names, so set Directory so that if you gave one folder with all your data, someone could read in each data set by only chaning the set directory at the top.
 
 
