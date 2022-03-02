@@ -50,6 +50,17 @@ df2 <- df2 %>%
   mutate(depth_std = RPtoWS - m) %>%
   ungroup()
 
+##reference height for each well with outliers removed
+max_height2 <- aggregate(RPtoWS ~ MasterSiteCode, df1, function(x) max(x))
+
+colnames(max_height2) <- c("MasterSiteCode", "m")
+nooutliers_standardized <- merge(kern_casgem, max_height, by= "MasterSiteCode")
+
+nooutliers_standardized <- nooutliers_standardized %>% 
+  group_by(MasterSiteCode) %>%
+  mutate(depth_std = RPtoWS - m) %>%
+  ungroup()
+
 ##wells plotted by reference height
 d <- ggplot(df2, aes(x=Date, y=depth_std, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=depth_std))
 d
@@ -57,7 +68,31 @@ d
 ##trying to find outliers in individual wells
 df3 <- kern_casgem %>% 
   group_by(MasterSiteCode) %>%
-  summarize(sd = sd(RPtoWS, na.rm=TRUE), mean = mean(RPtoWS, na.rm=TRUE), min = min(RPtoWS, na.rm=TRUE), max = max(RPtoWS, na.rm=TRUE), n=n()) %>%
+  summarize(sd = sd(RPtoWS, na.rm=TRUE), quantile = quantile(RPtoWS, probs=0.99, na.rm=TRUE), mean = mean(RPtoWS, na.rm=TRUE), min = min(RPtoWS, na.rm=TRUE), max = max(RPtoWS, na.rm=TRUE), n=n()) %>%
+  ungroup()
+
+g <- ggplot(df2, aes(depth_std)) + geom_histogram() + theme(legend.position = "none")
+g
+
+kern_casgem <-merge(kern_casgem, df3, by = "MasterSiteCode")
+
+df1 = kern_casgem %>%
+  group_by(MasterSiteCode) %>%
+  filter(!((RPtoWS - mean(RPtoWS, na.rm=TRUE)) > 3*sd(RPtoWS, na.rm=TRUE)))
+
+##trying boxplot for outliers
+boxplot(kern_casgem$RPtoWS~kern_casgem$MasterSiteCode)
+
+##plot without outliers
+withoutoutliers <- ggplot(df1, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS))
+withoutoutliers
+
+
+
+##not working
+df4 <- kern_casgem %>% 
+  group_by(MasterSiteCode) %>%
+  filter(RPtoWS > quantile(RPtoWS, probs=0.99, na.rm = TRUE)) %>%
   ungroup()
 
 ##plotting individual wells
@@ -65,6 +100,56 @@ e <- ggplot(subset(kern_casgem, MasterSiteCode=="356684N1193954W002"), aes(x=Dat
 e
 
 data_check <- subset(kern_casgem, MasterSiteCode=="356684N1193954W002")
+
+##aggregating measurements up by year, finding avg depth_std by year
+
+df2$Year <- as.numeric(format(df2$Date, "%Y"))
+avgperyear <- aggregate(df2$depth_std, by=list(year=df2$Year), FUN=mean, na.rm=TRUE)
+
+## plotting change in average standardized depth to groundwater across time for Kern county
+f <- ggplot(avgperyear, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x))
+f
+
+## plotting the above but with outliers removed
+nooutliers_standardized$Year <- as.numeric(format(nooutliers_standardized$Date, "%Y"))
+avgperyear2 <- aggregate(nooutliers_standardized$depth_std, by=list(year=nooutliers_standardized$Year), FUN=mean, na.rm=TRUE)
+h <- ggplot(avgperyear2, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x))
+h
+
+##attempt to plot well locations with cropscape
+library(cdlTools)
+crop2015 <- getCDL("California", 2015, location = NULL)
+##the above does not work, had to download files from the website. Imported tif file has a raster object.
+library(raster)
+kern_crop_2015 <- "CDL_2015_06029.tif"
+kern_crop_2015=raster(kern_crop_2015)
+##plotting raster layer onto plot with well points
+##convert raster layer to data frame?
+kern_crop_2015pt <- rasterToPoints(kern_crop_2015, spatial = TRUE)
+kern_crop_2015df <- as.data.frame(kern_crop_2015pt)
+
+ggplot() +
+  geom_raster(data = kern_crop_2015df , aes(x = x, y = y, fill = CDL_2015_06029)) + geom_sf(data = df)
+  ggtitle("raster")
+
+##reprojecting raster data to match kern county shape file?
+  kern_crop_2015rp <- projectRaster(kern_crop_2015,
+                                crs = crs(kern_county))
+  plot(kern_crop_2015rp)
+  plot(kern_county, add=TRUE)
+  
+
+plot(kern_crop_2015)
+plot(df$geometry, add = TRUE, pch = 20, col= "purple")
+
+kern_crop_map <- ggplot() + geom_raster(data = kern_crop_2015)
+
+kern_crop_map <- ggplot()
+kern_crop_map <- kern_crop_map + geom_sf(data = kern_county, color="black", fill="white", size=0.25) + geom_sf(data = df) + geom_raster(data = kern_crop_2015df)
+kern_crop_map
+
+
+
 
 
 select
