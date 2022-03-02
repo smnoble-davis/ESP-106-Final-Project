@@ -1,6 +1,7 @@
 #read in ag crop production data files 2009-2020
 library(tidyverse)
 library(stringr)
+setwd("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production")
 
 #Set Directory so that if you gave one folder with all your data, someone could read in each data set by only chaning the set directory at the top.
 
@@ -9,7 +10,7 @@ library(stringr)
 #Notice that some data sets have a space at the end of the County name and crop names, while some data sets do not.Remove the trailing white space from those vectors to avoid double counting of crops when you combine all the data frames later.
 
 #2009 DATA
-ag2009=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2009cropyear.csv")
+ag2009=read.csv("2009cropyear.csv")
 ag2009$Crop.Name=trimws(ag2009$Crop.Name,which="r")
 ag2009$County=trimws(ag2009$County,which="r")
 
@@ -39,7 +40,7 @@ ag2009_cntcrops=subset(ag2009,County%in%c("Fresno","Kern","Monterey","Merced","T
                         FALSE == str_detect(Crop.Name,"BIOMASS"))
 
 #2010 DATA
-ag2010=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2010cropyear.csv")   
+ag2010=read.csv("2010cropyear.csv")   
 ag2010$Crop.Name=trimws(ag2010$Crop.Name,which="r")
 ag2010$County=trimws(ag2010$County,which="r")
 
@@ -70,7 +71,7 @@ ag2010_cntcrops=subset(ag2010,County%in%c("Fresno","Kern","Monterey","Merced","T
 
 
 #2011 DATA
-ag2011=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2011cropyear.csv")
+ag2011=read.csv("2011cropyear.csv")
 ag2011$Crop.Name=trimws(ag2011$Crop.Name,which="r")
 ag2011$County=trimws(ag2011$County,which="r")
 
@@ -101,7 +102,7 @@ ag2011_cntcrops=subset(ag2011,County%in%c("Fresno","Kern","Monterey","Merced","T
 
 
 #2012 DATA
-ag2012=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2012cropyear.csv")
+ag2012=read.csv("2012cropyear.csv")
 ag2012$Crop.Name=trimws(ag2012$Crop.Name,which="r")
 ag2012$County=trimws(ag2012$County,which="r")
 
@@ -132,7 +133,7 @@ ag2012_cntcrops=subset(ag2012,County%in%c("Fresno","Kern","Monterey","Merced","T
 
               
 #2013 DATA
-ag2013=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2013cropyear.csv")
+ag2013=read.csv("2013cropyear.csv")
 ag2013_cntcrops=subset(ag2013,County%in%c("Fresno","Kern","Monterey","Merced","Tulare") &
                          FALSE == str_detect(Crop.Name,"APIARY") &
                          FALSE == str_detect(Crop.Name,"CATTLE") &
@@ -158,7 +159,7 @@ ag2013_cntcrops=subset(ag2013,County%in%c("Fresno","Kern","Monterey","Merced","T
                          FALSE == str_detect(Crop.Name,"OSTRICH") &
                          FALSE == str_detect(Crop.Name,"BIOMASS"))
 #2014 DATA
-ag2014=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2014cropyear.csv")
+ag2014=read.csv("2014cropyear.csv")
 ag2014_cntcrops=subset(ag2014,County%in%c("Fresno","Kern","Monterey","Merced","Tulare") &
                          FALSE == str_detect(Crop.Name,"APIARY") &
                          FALSE == str_detect(Crop.Name,"CATTLE") &
@@ -185,7 +186,7 @@ ag2014_cntcrops=subset(ag2014,County%in%c("Fresno","Kern","Monterey","Merced","T
                          FALSE == str_detect(Crop.Name,"BIOMASS"))
 
 #2015 DATA
-ag2015=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2015cropyear.csv")
+ag2015=read.csv("2015cropyear.csv")
 ag2015_cntcrops=subset(ag2015,County%in%c("Fresno","Kern","Monterey","Merced","Tulare") &
                          FALSE == str_detect(Crop.Name,"APIARY") &
                          FALSE == str_detect(Crop.Name,"CATTLE") &
@@ -211,7 +212,7 @@ ag2015_cntcrops=subset(ag2015,County%in%c("Fresno","Kern","Monterey","Merced","T
                          FALSE == str_detect(Crop.Name,"OSTRICH") &
                          FALSE == str_detect(Crop.Name,"BIOMASS"))
 #2016 DATA
-ag2016=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2016cropyear.csv")
+ag2016=read.csv("2016cropyear.csv")
 ag2016_cntcrops=subset(ag2016,County%in%c("Fresno","Kern","Monterey","Merced","Tulare") &
                          FALSE == str_detect(Crop.Name,"APIARY") &
                          FALSE == str_detect(Crop.Name,"CATTLE") &
@@ -238,7 +239,7 @@ ag2016_cntcrops=subset(ag2016,County%in%c("Fresno","Kern","Monterey","Merced","T
                          FALSE == str_detect(Crop.Name,"BIOMASS "))
 
 #2017 DATA
-ag2017=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2017cropyear.csv")
+ag2017=read.csv("2017cropyear.csv")
 ag2017$Crop.Name=trimws(ag2017$Crop.Name,which="r")
 ag2017$County=trimws(ag2017$County,which="r")
 
@@ -269,7 +270,7 @@ ag2017_cntcrops=subset(ag2017,County%in%c("Fresno","Kern","Monterey","Merced","T
 
 
 #2018 DATA
-ag2018err=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2018cactbsErrata.csv")
+ag2018err=read.csv("2018cactbsErrata.csv")
 ag2018err$Crop.Name=trimws(ag2018err$Crop.Name,which="r")
 ag2018err$County=trimws(ag2018err$County,which="r")
 
@@ -300,7 +301,7 @@ ag2018_cntcrops=subset(ag2018err,County%in%c("Fresno","Kern","Monterey","Merced"
 
 
 #2019 DATA
-ag2019=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2019cropyear.csv")
+ag2019=read.csv("2019cropyear.csv")
 ag2019$Crop.Name=trimws(ag2019$Crop.Name,which="r")
 ag2019$County=trimws(ag2019$County,which="r")
 
@@ -330,7 +331,7 @@ ag2019_cntcrops=subset(ag2019,County%in%c("Fresno","Kern","Monterey","Merced","T
                          FALSE == str_detect(Crop.Name,"BIOMASS"))
 
 #2020 DATA
-ag2020=read.csv("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production/2020cropyear.csv")
+ag2020=read.csv("2020cropyear.csv")
 ag2020$Crop.Name=trimws(ag2020$Crop.Name,which="r")
 ag2020$County=trimws(ag2020$County,which="r")
   
@@ -405,7 +406,7 @@ YrCountyBar=print(
     theme(plot.title = element_text(face="bold"))
 )
 
-#Plot the county production values over time
+#Plot all the counties' production values over time
 YrCountyLine=print(
   ggplot(county_yr_total,aes(Year,Value_sum,group=County,color=County))+
   ggtitle("Gross Crop Production Value (2009-2020)")+
@@ -416,13 +417,30 @@ YrCountyLine=print(
   theme(plot.title = element_text(face="bold")))
 
 
-  
-  
+#Plot each county's production values over time
+EachCounty=
+  ggplot(county_yr_total,aes(Year,Value_sum))+
+  facet_wrap(~County)+  
+  ggtitle("Gross Crop Production Value (2009-2020)")+
+    geom_line()+
+    geom_point()+
+    scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
+    scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    theme(plot.title = element_text(face="bold"))
+
+
+#Save the 2 compiled ag dataframes as objects so you can call them later and use in other R scripts
+save(county_yr_total,file="TotalProduction.Rdat")
+save(allag,file="5Counties_AllCrops.Rdat")
+
   
 #NEED TO DO
-#Per the rubric, best if you're not hard coding file path names, so set Directory so that if you gave one folder with all your data, someone could read in each data set by only chaning the set directory at the top.
+#Run a linear regression of production value and year? (lm(value~year,data=county_yr_total).How to interpret...
+#how good was my model...use glance() - look for R2,adjusted R2,p values, F statistic
 
 
-
+#RELATIONSHIP BETWEEN WELL DEPTH AND CROP VALUE PER WELL BUFFER ZONES IN 2015
+#CALL WHAT CROPS FALL WITHIN BUFFER ZONES FOR KERN COUNTY BECAUSE WE SEE A DROP
+#SUBSET THE AG DATA TO ONLY SHOW THOSE CROPS AND CALCULATE TOTAL VALUE FOR EACH CROP AND COMPARE IF THERE'S A SIG CHANGE SINCE 2009
 
 
