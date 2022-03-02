@@ -365,7 +365,7 @@ ag2020_cntcrops=rename(ag2020_cntcrops,Yield=Yield..Unit.Acre.,Price.P.U=Price..
 
 #Now combine all data frames so you see all counties for every year 2009-2020.Some years have differing numbers of observations, so you'll want to use the bind_row function.
 
-allag=bind_rows(ag2009_cntcrops,ag2010_cntcrops,ag2011_cntcrops,ag2011_cntcrops,ag2012_cntcrops,ag2013_cntcrops,ag2014_cntcrops,ag2015_cntcrops,ag2016_cntcrops,ag2017_cntcrops,ag2018_cntcrops,ag2019_cntcrops,ag2020_cntcrops)
+allag=bind_rows(ag2009_cntcrops,ag2010_cntcrops,ag2011_cntcrops,ag2012_cntcrops,ag2013_cntcrops,ag2014_cntcrops,ag2015_cntcrops,ag2016_cntcrops,ag2017_cntcrops,ag2018_cntcrops,ag2019_cntcrops,ag2020_cntcrops)
 
 
 #This isn't the final data frame we're interested in, but create some exploratory data plots & stats of the new data frame. 
@@ -390,7 +390,11 @@ YrCounty_Valuesummary=print(summary(county_yr_total$Value_sum))
 YrCountyBoxplot=print(
   ggplot(county_yr_total,aes(y=Value_sum,fill=County))+
   geom_boxplot()+
-  ylab("Gross Production Value from 2009-2020 ($1000)"))
+  scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+  ggtitle("Gross Crop Production Value (2009-2020)")+
+  theme(plot.title = element_text(face="bold"),
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_blank()))
 
 #Per the boxplot, even though there are seemingly outliers in the data, we won't remove these values because we're not assuming this is due to miscalculation.
 #These varying values are likely due to changes in environmental conditions.
@@ -403,7 +407,7 @@ YrCountyLine=print(
   geom_point()+
   scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-  theme_bw())
+  theme(plot.title = element_text(face="bold")))
 
 
   
