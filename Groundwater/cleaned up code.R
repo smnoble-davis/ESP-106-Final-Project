@@ -45,15 +45,15 @@ kern_casgem["2279", 9] = -104.7
 monterey_casgem["654", 9] = -4
 
 # exploratory plots of all 5 counties 
-kern <- ggplot(kern_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Kern County")
+kern <- ggplot(kern_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Kern County") + ylab("Depth to Groundwater (ft)")
 kern
-fresno <- ggplot(fresno_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Fresno County")
+fresno <- ggplot(fresno_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Fresno County") + ylab("Depth to Groundwater (ft)")
 fresno
-merced <- ggplot(merced_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Merced County")
+merced <- ggplot(merced_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Merced County") + ylab("Depth to Groundwater (ft)")
 merced
-monterey <- ggplot(monterey_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Monterey County")
+monterey <- ggplot(monterey_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Monterey County") + ylab("Depth to Groundwater (ft)")
 monterey
-tulare <- ggplot(tulare_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Tulare County")
+tulare <- ggplot(tulare_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Tulare County") + ylab("Depth to Groundwater (ft)")
 tulare
 
 # code to show all 5 plots at the same time
@@ -181,20 +181,81 @@ merced_apy <- aggregate(merced_elim$depth_std, by=list(year=merced_elim$Year), F
 monterey_apy <- aggregate(monterey_elim$depth_std, by=list(year=monterey_elim$Year), FUN=mean, na.rm=TRUE)
 tulare_apy <- aggregate(tulare_elim$depth_std, by=list(year=tulare_elim$Year), FUN=mean, na.rm=TRUE)
 
+#adding county column to apy data frams
+kern_apy$County <-"Kern"
+fresno_apy$County <-"Fresno"
+merced_apy$County <-"Merced"
+monterey_apy$County <-"Monterey"
+tulare_apy$County <-"Tulare"
+
 # plotting change in average standardized depth to groundwater across time for each county
-agg_kern <- ggplot(kern_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Kern County")
+agg_kern <- ggplot(kern_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Kern County") + xlab("Year") + ylab("Average Depth to Groundwater")
 agg_kern
-agg_fresno <- ggplot(fresno_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Fresno County")
+agg_fresno <- ggplot(fresno_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Fresno County") + xlab("Year") + ylab("Average Depth to Groundwater")
 agg_fresno
-agg_merced <- ggplot(merced_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Merced County")
+agg_merced <- ggplot(merced_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Merced County") + xlab("Year") + ylab("Average Depth to Groundwater")
 agg_merced
-agg_monterey <- ggplot(monterey_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Monterey County")
+agg_monterey <- ggplot(monterey_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Monterey County") + xlab("Year") + ylab("Average Depth to Groundwater")
 agg_monterey
-agg_tulare <- ggplot(tulare_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Tulare County")
+agg_tulare <- ggplot(tulare_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Tulare County") + xlab("Year") + ylab("Average Depth to Groundwater")
 agg_tulare
 
 # code to show all 5 plots at the same time
 grid.arrange(agg_kern, agg_fresno, agg_merced, agg_monterey, agg_tulare)
 
+## attempting to use crop scape stuff
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(tigris)
+library(cdlTools)
+library(raster)
+library(foreign)
+library(rgdal)
+library(rgeos)
+
+# loading in raster layer
+kern_crop_2015 <- raster("CDL_2015_clip_20220302151056_76253008.tif")
+crs(kern_crop_2015)
+
+#loading in county shape file
+CA_counties <- counties(state = "California", cb=TRUE)
+kern_county <- subset(CA_counties, NAME == "Kern")
+crs(kern_county)
+plot(st_geometry(kern_county), graticule = TRUE, axes = TRUE)
+
+# plot raster layer
+plot(kern_crop_2015)
+plot(st_geometry(kern_county), graticule = TRUE, axes = TRUE, add=TRUE)
+
+#convert well data to an sf object
+well_locations_map <- st_as_sf(x = kern_elim, coords = c("LONGITUDE", "LATITUDE"))
+
+#crop the raster layer to the county shape file
+kern_crop_2015_crop <- crop(kern_crop_2015, kern_county)
+plot(kern_crop_2015_crop)
+
+#plot points onto raster layer
+plot(kern_crop_2015_crop)
+plot(st_geometry(kern_county), graticule = TRUE, axes = TRUE, add=TRUE)
+plot(st_geometry(well_locations_map), pch=16, col = "black", graticule = TRUE, axes = TRUE, add=TRUE)
+plot(well_buffer, graticule = TRUE, axes = TRUE, add=TRUE)
+
+#creating a buffer around points
+well_locations_points <- as_Spatial(well_locations_map)
+well_buffer <- buffer(well_locations_points, width = 3200)
+
+# read in dbf file
+kern_crop_2015_dbf <- read.dbf("CDL_2015_clip_20220302151056_76253008.tif.vat.dbf", as.is = FALSE)
+
 # combining all dataframes into one single df
 casgem_all <- do.call("rbind", list(kern_casgem, fresno_casgem, merced_casgem, monterey_casgem, tulare_casgem))
+
+## combine apy dataframes and run boxplot
+apy_all <- do.call("rbind", list(kern_apy, fresno_apy, merced_apy, monterey_apy, tulare_apy))
+colnames(apy_all) <- c("Year", "Avg_Depth", "County")
+apy_box <- ggplot(apy_all, aes(x=County, y=Avg_Depth)) + geom_boxplot()
+
+
+
+
