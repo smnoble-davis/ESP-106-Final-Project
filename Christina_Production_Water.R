@@ -67,7 +67,13 @@ tulare=water_prod %>%
   filter(County=="Tulare")
 cor_tulare=print(cor(x=tulare$Avg_Depth,y=tulare$Value_sum))
 
-#The coefficient .06 indicates there a very weak positive relationship but it's weaker than Kern County and stronger than the counties aggregated.
+#The coefficient .06 indicates there's a very weak positive relationship where as groundwater levels rise, production also increases.
+
+monterey=water_prod %>%
+  filter(County=="Monterey")
+cor_monterey=print(cor(x=monterey$Avg_Depth,y=monterey$Value_sum))
+
+#The coefficient -.08 indicates there's a very weak negative relationship where as groundwater levels lower, production increases.
 
 
 #WHY NOT WORKING??
