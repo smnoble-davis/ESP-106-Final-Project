@@ -433,7 +433,6 @@ EachCounty=
 save(county_yr_total,file="TotalProduction.Rdata")
 save(allag,file="5Counties_AllCrops.Rdata")
 
-
 #NEED TO DO
 #Run a linear regression of production value and year? (lm(value~year,data=county_yr_total).How to interpret...
 #how good was my model...use glance() - look for R2,adjusted R2,p values, F statistic

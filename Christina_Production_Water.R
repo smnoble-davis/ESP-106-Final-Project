@@ -15,15 +15,27 @@ water_prod=merge(apy_all,county_yr_total,by=c("County","Year"))
 water_prod$Year=ymd(water_prod$Year,truncated=2)
 
 
-#Plot the production value and groundwater levels aggregated for all 5 counties.
+#Plot the production value and groundwater levels aggregated for all 5 counties and group by year.
 allcounties=print(
   ggplot(water_prod,aes(Avg_Depth,Value_sum,group=Year,color=Year))+
   geom_point()+
   xlab("Mean Change in Depth (m)")+
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-  ggtitle("Change in Production Value and Groundwater Levels for All Counties (2009-2020)")+
+  ggtitle("Change in Production Value and Groundwater Levels Per Year")+
   theme(plot.title = element_text(face="bold"))
 )
+
+LM=print(
+  ggplot(water_prod,aes(Avg_Depth,Value_sum))+
+    geom_point()+
+    geom_smooth(method="lm")+
+    xlab("Mean Change in Depth (m)")+
+    scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    ggtitle("Change in Production Value and Groundwater Levels for All Counties (2009-2020)")+
+    theme(plot.title = element_text(face="bold"))
+)
+
+
 
 #Run a correlation of groundwater depth and production value for all 5 counties (Christina)
 cor_all=print(cor(x=water_prod$Avg_Depth,y=water_prod$Value_sum))
