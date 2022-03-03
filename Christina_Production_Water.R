@@ -10,13 +10,17 @@ load("Ag Production/TotalProduction.Rdata")
 water_prod=merge(apy_all,county_yr_total,by=c("County","Year"))
 
 #Change the year to class 'date' using lubridate()
-
+water_prod$Year=ymd(water_prod$Year,truncated=2)
 
 
 #Plot each county's total value and groundwater levels. clean up plot so years appear more discrete.
 ggplot(water_prod,aes(Value_sum,Avg_Depth,group=Year,color=Year))+
   facet_wrap(~County)+
-  geom_point()
+  geom_point()+
+  ylab("Mean Change in Depth (m)")+
+  scale_x_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+  ggtitle("Change in Production Value and Groundwater Depth from 2009-2020")+
+  theme(plot.title = element_text(face="bold"))
 
 #Run a correlation for each county (Christina)
 cor(x=water_prod$Avg_Depth,y=water_prod$Value_sum)
