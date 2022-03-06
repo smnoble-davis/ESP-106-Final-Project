@@ -11,13 +11,18 @@ load("Ag Production/TotalProduction.Rdata")
 #Merge the data frames
 water_prod=merge(apy_all,county_yr_total,by=c("County","Year"))
 
+#Drought = 2009, 2012-2016
+prod_drought=water_prod %>%
+  mutate(drought=ifelse(Year==2009| between(Year,2012,2016),1,0))
+
+
 #Change the year to class 'date' using lubridate(). Add a column coding whether the year is a drought year (1) or not (0)
-water_prod$Year=ymd(water_prod$Year,truncated=2)
+prod_drought$Year=ymd(prod_drought$Year,truncated=2)
 
 
 #Plot the production value and groundwater levels aggregated for all 5 counties and group by year.
 allcounties=print(
-  ggplot(water_prod,aes(Avg_Depth,Value_sum,group=Year,color=Year))+
+  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=Year,color=Year))+
   geom_point()+
   xlab("Mean Change in Depth (m)")+
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
@@ -26,7 +31,7 @@ allcounties=print(
 )
 
 LM=print(
-  ggplot(water_prod,aes(Avg_Depth,Value_sum))+
+  ggplot(prod_drought,aes(Avg_Depth,Value_sum))+
     geom_point()+
     geom_smooth(method="lm")+
     xlab("Mean Change in Depth (m)")+
@@ -38,7 +43,7 @@ LM=print(
 
 
 #Run a correlation of groundwater depth and production value for all 5 counties (Christina)
-cor_all=print(cor(x=water_prod$Avg_Depth,y=water_prod$Value_sum))
+cor_all=print(cor(x=prod_drought$Avg_Depth,y=prod_drought$Value_sum))
 
 #The coefficient -0.35 indicates there's a negative relationship between groundwater depth and production value, but it's not a very strong relationship.
 #This suggests that across all five counties, as the groundwater depth lowers, gross production value increases.
@@ -46,7 +51,7 @@ cor_all=print(cor(x=water_prod$Avg_Depth,y=water_prod$Value_sum))
 #Plot each county's total value and groundwater levels.
 #Consider adding lines between the points esp Kern
 bycounty=print(
-  ggplot(water_prod,aes(Avg_Depth,Value_sum,group=Year,color=Year))+
+  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=Year,color=Year))+
   facet_wrap(~County)+
   geom_point()+
   xlab("Mean Change in Depth (m)")+
@@ -56,37 +61,38 @@ bycounty=print(
 )
 
 #Run a correlation for each of the 5 counties (Christina)
-kern=water_prod %>%
+kern=prod_drought %>%
   filter(County=="Kern")
 
 cor_kern=print(cor(x=kern$Avg_Depth,y=kern$Value_sum))
 
 #The coefficient -0.59 indicates there's a stronger negative relationship between groundwater depth and production value in Kern County.
 
-fresno=water_prod %>%
+fresno=prod_drought %>%
   filter(County=="Fresno")
 cor_fresno=print(cor(x=fresno$Avg_Depth,y=fresno$Value_sum))
 
 #The coefficient -0.46 indicates there's a negative relationship, but it's weaker than Kern County and stronger than the counties aggregated.
 
-merced=water_prod %>%
+merced=prod_drought %>%
   filter(County=="Merced")
 cor_merced=print(cor(x=merced$Avg_Depth,y=merced$Value_sum))
 
 #The coefficient -0.42 indicates there's a negative relationship, but it's weaker than Kern County, stronger than the counties aggregated, and about the same as Fresno County.
 
-tulare=water_prod %>%
+tulare=prod_drought %>%
   filter(County=="Tulare")
 cor_tulare=print(cor(x=tulare$Avg_Depth,y=tulare$Value_sum))
 
 #The coefficient .06 indicates there's a very weak positive relationship where as groundwater levels rise, production also increases.
 
-monterey=water_prod %>%
+monterey=prod_drought %>%
   filter(County=="Monterey")
 cor_monterey=print(cor(x=monterey$Avg_Depth,y=monterey$Value_sum))
 
 #The coefficient -.08 indicates there's a very weak negative relationship where as groundwater levels lower, production increases.
 
+                      ,
 
 #WHY NOT WORKING??
 cor_counties=water_prod %>%
