@@ -1,3 +1,7 @@
+#AUTHORS: SHAELA NOBLE & CHRISTINA HARRINGTON
+
+
+#SECTION 1: WRANGLING/CLEANING AGRICULTURAL DATA
 #read in ag crop production data files 2009-2020
 library(tidyverse)
 library(stringr)
@@ -15,29 +19,29 @@ ag2009$Crop.Name=trimws(ag2009$Crop.Name,which="r")
 ag2009$County=trimws(ag2009$County,which="r")
 
 ag2009_cntcrops=subset(ag2009,County%in%c("Fresno","Kern","Monterey","Merced","Tulare") &
-                      FALSE == str_detect(Crop.Name,"APIARY") &
-                      FALSE == str_detect(Crop.Name,"CATTLE") &
-                      FALSE == str_detect(Crop.Name,"FISH") &
-                      FALSE == str_detect(Crop.Name,"HOGS") &
-                      FALSE == str_detect(Crop.Name,"CHICKENS") &
-                        FALSE == str_detect(Crop.Name,"EGGS") &
-                        FALSE == str_detect(Crop.Name,"LIVESTOCK") &
-                        FALSE == str_detect(Crop.Name,"MANURE") &
-                        FALSE == str_detect(Crop.Name,"MILK") &
-                        FALSE == str_detect(Crop.Name,"POULTRY") &
-                        FALSE == str_detect(Crop.Name,"SHEEP") &
-                        FALSE == str_detect(Crop.Name,"WOOL") &
-                        FALSE == str_detect(Crop.Name,"SILAGE") &
-                        FALSE == str_detect(Crop.Name,"NURSERY") &
-                        FALSE == str_detect(Crop.Name,"FOREST") &
-                        FALSE == str_detect(Crop.Name,"FLOWERS") &
-                        FALSE == str_detect(Crop.Name,"PASTURE") &
-                        FALSE == str_detect(Crop.Name,"CHRISTMAS") &
-                        FALSE == str_detect(Crop.Name,"TURKEYS") &
-                        FALSE == str_detect(Crop.Name,"BIRDS") &
-                        FALSE == str_detect(Crop.Name,"GOATS") &
-                        FALSE == str_detect(Crop.Name,"OSTRICH") &
-                        FALSE == str_detect(Crop.Name,"BIOMASS"))
+                         FALSE == str_detect(Crop.Name,"APIARY") &
+                         FALSE == str_detect(Crop.Name,"CATTLE") &
+                         FALSE == str_detect(Crop.Name,"FISH") &
+                         FALSE == str_detect(Crop.Name,"HOGS") &
+                         FALSE == str_detect(Crop.Name,"CHICKENS") &
+                         FALSE == str_detect(Crop.Name,"EGGS") &
+                         FALSE == str_detect(Crop.Name,"LIVESTOCK") &
+                         FALSE == str_detect(Crop.Name,"MANURE") &
+                         FALSE == str_detect(Crop.Name,"MILK") &
+                         FALSE == str_detect(Crop.Name,"POULTRY") &
+                         FALSE == str_detect(Crop.Name,"SHEEP") &
+                         FALSE == str_detect(Crop.Name,"WOOL") &
+                         FALSE == str_detect(Crop.Name,"SILAGE") &
+                         FALSE == str_detect(Crop.Name,"NURSERY") &
+                         FALSE == str_detect(Crop.Name,"FOREST") &
+                         FALSE == str_detect(Crop.Name,"FLOWERS") &
+                         FALSE == str_detect(Crop.Name,"PASTURE") &
+                         FALSE == str_detect(Crop.Name,"CHRISTMAS") &
+                         FALSE == str_detect(Crop.Name,"TURKEYS") &
+                         FALSE == str_detect(Crop.Name,"BIRDS") &
+                         FALSE == str_detect(Crop.Name,"GOATS") &
+                         FALSE == str_detect(Crop.Name,"OSTRICH") &
+                         FALSE == str_detect(Crop.Name,"BIOMASS"))
 
 #2010 DATA
 ag2010=read.csv("2010cropyear.csv")   
@@ -131,7 +135,7 @@ ag2012_cntcrops=subset(ag2012,County%in%c("Fresno","Kern","Monterey","Merced","T
                          FALSE == str_detect(Crop.Name,"OSTRICH") &
                          FALSE == str_detect(Crop.Name,"BIOMASS"))
 
-              
+
 #2013 DATA
 ag2013=read.csv("2013cropyear.csv")
 ag2013_cntcrops=subset(ag2013,County%in%c("Fresno","Kern","Monterey","Merced","Tulare") &
@@ -334,7 +338,7 @@ ag2019_cntcrops=subset(ag2019,County%in%c("Fresno","Kern","Monterey","Merced","T
 ag2020=read.csv("2020cropyear.csv")
 ag2020$Crop.Name=trimws(ag2020$Crop.Name,which="r")
 ag2020$County=trimws(ag2020$County,which="r")
-  
+
 ag2020_cntcrops=subset(ag2020,County%in%c("Fresno","Kern","Monterey","Merced","Tulare") &
                          FALSE == str_detect(Crop.Name,"APIARY") &
                          FALSE == str_detect(Crop.Name,"CATTLE") &
@@ -390,12 +394,12 @@ YrCounty_Valuesummary=print(summary(county_yr_total$Value_sum))
 
 YrCountyBoxplot=print(
   ggplot(county_yr_total,aes(y=Value_sum,fill=County))+
-  geom_boxplot()+
-  scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-  ggtitle("Gross Crop Production Value (2009-2020)")+
-  theme(plot.title = element_text(face="bold"),
-        axis.ticks.x=element_blank(),
-        axis.text.x=element_blank()))
+    geom_boxplot()+
+    scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    ggtitle("Gross Crop Production Value (2009-2020)")+
+    theme(plot.title = element_text(face="bold"),
+          axis.ticks.x=element_blank(),
+          axis.text.x=element_blank()))
 
 YrCountyBar=print(
   ggplot(county_yr_total,aes(Year,Value_sum,fill=County))+
@@ -409,12 +413,12 @@ YrCountyBar=print(
 #Plot all the counties' production values over time
 YrCountyLine=print(
   ggplot(county_yr_total,aes(Year,Value_sum,group=County,color=County))+
-  ggtitle("Gross Crop Production Value (2009-2020)")+
-  geom_line()+
-  geom_point()+
-  scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
-  scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-  theme(plot.title = element_text(face="bold")))
+    ggtitle("Gross Crop Production Value (2009-2020)")+
+    geom_line()+
+    geom_point()+
+    scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
+    scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    theme(plot.title = element_text(face="bold")))
 
 
 #Plot each county's production values over time
@@ -422,24 +426,44 @@ EachCounty=
   ggplot(county_yr_total,aes(Year,Value_sum))+
   facet_wrap(~County)+  
   ggtitle("Gross Crop Production Value (2009-2020)")+
-    geom_line()+
-    geom_point()+
-    scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
-    scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-    theme(plot.title = element_text(face="bold"))
+  geom_line()+
+  geom_point()+
+  scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
+  scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+  theme(plot.title = element_text(face="bold"))
 
 
 #Save the 2 compiled ag dataframes as objects so you can call them later and use in other R scripts
 save(county_yr_total,file="TotalProduction.Rdata")
 save(allag,file="5Counties_AllCrops.Rdata")
 
-#NEED TO DO
-#Run a linear regression of production value and year? (lm(value~year,data=county_yr_total).How to interpret...
-#how good was my model...use glance() - look for R2,adjusted R2,p values, F statistic
 
 
-#RELATIONSHIP BETWEEN WELL DEPTH AND CROP VALUE PER WELL BUFFER ZONES IN 2015
-#CALL WHAT CROPS FALL WITHIN BUFFER ZONES FOR KERN COUNTY BECAUSE WE SEE A DROP
-#SUBSET THE AG DATA TO ONLY SHOW THOSE CROPS AND CALCULATE TOTAL VALUE FOR EACH CROP AND COMPARE IF THERE'S A SIG CHANGE SINCE 2009
+
+
+
+
+
+
+
+
+
+
+
+#SECTION 2: WRANGLING/CLEANING GROUNDWATER DATA
+
+
+
+
+
+
+#SECTION 3: MERGING & ANALYZING DATA
+
+
+
+
+
+
+
 
 
