@@ -15,6 +15,8 @@ water_prod=merge(apy_all,county_yr_total,by=c("County","Year"))
 prod_drought=water_prod %>%
   mutate(drought=ifelse(Year==2009| between(Year,2012,2016),1,0))
 
+#change the drought variable from a numeric to a factor
+prod_drought$drought=as_factor(prod_drought$drought)
 
 #Change the year to class 'date' using lubridate(). Add a column coding whether the year is a drought year (1) or not (0)
 prod_drought$Year=ymd(prod_drought$Year,truncated=2)
@@ -41,7 +43,6 @@ LM=print(
 )
 
 
-
 #Run a correlation of groundwater depth and production value for all 5 counties (Christina)
 cor_all=print(cor(x=prod_drought$Avg_Depth,y=prod_drought$Value_sum))
 
@@ -51,7 +52,7 @@ cor_all=print(cor(x=prod_drought$Avg_Depth,y=prod_drought$Value_sum))
 #Plot each county's total value and groundwater levels.
 #Consider adding lines between the points esp Kern
 bycounty=print(
-  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=Year,color=Year))+
+  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=drought,color=drought))+
   facet_wrap(~County)+
   geom_point()+
   xlab("Mean Change in Depth (m)")+
@@ -92,18 +93,23 @@ cor_monterey=print(cor(x=monterey$Avg_Depth,y=monterey$Value_sum))
 
 #The coefficient -.08 indicates there's a very weak negative relationship where as groundwater levels lower, production increases.
 
-                      ,
 
-#WHY NOT WORKING??
-cor_counties=water_prod %>%
-  group_split(County) %>%
-  map(.x=cor_counties,cor(x=Avg_Depth,y=Value_sum))
+#Correlation between value and drought?
+#Create boxplots for drought and non-drought
+
+
+
+test=subset(prod_drought,select=-c(County,Year))
+
+
 
 
 #Run LM for each county and interpret (Shaela)
 
 
-  
+#RUNNING A CORRELATION WITH DROUGHT VARIABLE?
+#VISUALIZING THE MULTIVARIATE REGRESSION, POSSIBLE?
+#SHOULD WE RUN A CORRELATION/LM FOR DROUGHT VS GROUNDWATER LEVEL? POSSIBLE SINCE ONE IS A CATEGORICAL/FACTOR VARIABLE?
   
   
 #NOTES FROM MEETING WITH EVAN
