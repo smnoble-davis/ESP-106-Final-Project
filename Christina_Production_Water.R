@@ -24,7 +24,7 @@ prod_drought$Year=ymd(prod_drought$Year,truncated=2)
 
 #Plot the production value and groundwater levels aggregated for all 5 counties and group by year.
 allcounties=print(
-  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=Year,color=Year))+
+  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=drought,color=drought))+
   geom_point()+
   xlab("Mean Change in Depth (m)")+
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
@@ -98,8 +98,19 @@ cor_monterey=print(cor(x=monterey$Avg_Depth,y=monterey$Value_sum))
 #Create boxplots for drought and non-drought
 
 
-
 test=subset(prod_drought,select=-c(County,Year))
+
+numeric_df=prod_drought%>% mutate(drought = as.numeric(drought))
+
+cor_all2=prod_drought %>% 
+  mutate(drought = as.numeric(drought)) %>% 
+  group_by(County) %>%
+  select(prod_drought,Avg_Depth:drought) %>% 
+  summarize()
+
+
+  cor()
+
 
 
 
@@ -127,4 +138,10 @@ test=subset(prod_drought,select=-c(County,Year))
 #GOING ABOVE & BEYOND (not needed for this project but if we wanted to continue this in future): mixed effects models / heirarchaal models - lme4 package - if there are few data points (maybe sampling error)
   
   
-  
+#Drought vs non-drought plots by county have fitted lines don't show interaction effects
+#more valuable to report on the coefficient and standard error...avoid p values cuz 'trash stats for trash people'
+#standard errors +/- 2 standard deviations
+#coefficient values should be interpreted in light of the unit of the predictors and the range they spann
+
+#Don't need to report on the coefficient values in the final paper but we do care about their sign and relative magnitude 
+#R2 is correlated with correlation coefficients

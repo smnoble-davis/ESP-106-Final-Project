@@ -439,17 +439,6 @@ save(allag,file="5Counties_AllCrops.Rdata")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 #SECTION 2: WRANGLING/CLEANING GROUNDWATER DATA
 
 
@@ -459,7 +448,9 @@ save(allag,file="5Counties_AllCrops.Rdata")
 
 #SECTION 3: MERGING & ANALYZING DATA
 
-
+setwd("/Users/christinaharrington/Desktop/ESP-106-Final-Project")
+load("Groundwater/apy_all.RData")
+load("Ag Production/TotalProduction.Rdata")
 
 
 
