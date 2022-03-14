@@ -15,127 +15,79 @@ water_prod=merge(apy_all,county_yr_total,by=c("County","Year"))
 prod_drought=water_prod %>%
   mutate(drought=ifelse(Year==2009| between(Year,2012,2016),1,0))
 
-#change the drought variable from a numeric to a factor
+#change the drought variable from a numeric to a factor so it plots correctly
 prod_drought$drought=as_factor(prod_drought$drought)
 
 #Change the year to class 'date' using lubridate(). Add a column coding whether the year is a drought year (1) or not (0)
 prod_drought$Year=ymd(prod_drought$Year,truncated=2)
 
 
-#Plot the production value and groundwater levels aggregated for all 5 counties and group by year.
-allcounties=print(
-  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=drought,color=drought))+
-  geom_point()+
-  xlab("Mean Change in Depth (m)")+
-  scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-  ggtitle("Change in Production Value and Groundwater Levels Per Year")+
-  theme(plot.title = element_text(face="bold"))
-)
-
-LM=print(
-  ggplot(prod_drought,aes(Avg_Depth,Value_sum))+
-    geom_point()+
-    geom_smooth(method="lm")+
-    xlab("Mean Change in Depth (m)")+
-    scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-    ggtitle("Change in Production Value and Groundwater Levels for All Counties (2009-2020)")+
-    theme(plot.title = element_text(face="bold"))
-)
-
-
-#Run a correlation of groundwater depth and production value for all 5 counties (Christina)
+#Run a correlation of groundwater depth, production value, and drought for all 5 counties
 cor_all=print(cor(x=prod_drought$Avg_Depth,y=prod_drought$Value_sum))
+
+prod_drought$drought=as.numeric(prod_drought$drought)
+cor_counties=subset(prod_drought,select=-c(County,Year))
+cor_countiesfinal=print(cor(cor_counties))
 
 #The coefficient -0.35 indicates there's a negative relationship between groundwater depth and production value, but it's not a very strong relationship.
 #This suggests that across all five counties, as the groundwater depth lowers, gross production value increases.
 
-#Plot each county's total value and groundwater levels.
-#Consider adding lines between the points esp Kern
-bycounty=print(
-  ggplot(prod_drought,aes(Avg_Depth,Value_sum,group=drought,color=drought))+
-  facet_wrap(~County)+
-  geom_point()+
-  xlab("Mean Change in Depth (m)")+
-  scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
-  ggtitle("Change in Production Value and Groundwater Levels")+
-  theme(plot.title = element_text(face="bold"))
-)
-
 #Run a correlation for each of the 5 counties (Christina)
-kern=prod_drought %>%
-  filter(County=="Kern")
 
-cor_kern=print(cor(x=kern$Avg_Depth,y=kern$Value_sum))
+#Kern Correlations
 
-#The coefficient -0.59 indicates there's a stronger negative relationship between groundwater depth and production value in Kern County.
+kern_df=subset(prod_drought,County=="Kern")
+kern_df=subset(kern_df,select=-c(County,Year))
+kern_cor=print(cor(kern_df))
 
-fresno=prod_drought %>%
-  filter(County=="Fresno")
-cor_fresno=print(cor(x=fresno$Avg_Depth,y=fresno$Value_sum))
+#Fresno Correlations
 
-#The coefficient -0.46 indicates there's a negative relationship, but it's weaker than Kern County and stronger than the counties aggregated.
+fresno_df=subset(prod_drought,County=="Fresno")
+fresno_df=subset(fresno_df,select=-c(County,Year))
+fresno_cor=print(cor(fresno_df))
 
-merced=prod_drought %>%
-  filter(County=="Merced")
-cor_merced=print(cor(x=merced$Avg_Depth,y=merced$Value_sum))
+#Merced Correlations
 
-#The coefficient -0.42 indicates there's a negative relationship, but it's weaker than Kern County, stronger than the counties aggregated, and about the same as Fresno County.
-
-tulare=prod_drought %>%
-  filter(County=="Tulare")
-cor_tulare=print(cor(x=tulare$Avg_Depth,y=tulare$Value_sum))
-
-#The coefficient .06 indicates there's a very weak positive relationship where as groundwater levels rise, production also increases.
-
-monterey=prod_drought %>%
-  filter(County=="Monterey")
-cor_monterey=print(cor(x=monterey$Avg_Depth,y=monterey$Value_sum))
-
-#The coefficient -.08 indicates there's a very weak negative relationship where as groundwater levels lower, production increases.
+merced_df=subset(prod_drought,County=="Merced")
+merced_df=subset(merced_df,select=-c(County,Year))
+merced_cor=print(cor(merced_df))
 
 
-#Correlation between value and drought?
-#Create boxplots for drought and non-drought
+#Tulare Correlations
+
+tulare_df=subset(prod_drought,County=="Tulare")
+tulare_df=subset(tulare_df,select=-c(County,Year))
+tulare_cor=print(cor(tulare_df))
+
+#Monterey Correlations
+
+monterey_df=subset(prod_drought,County=="Monterey")
+monterey_df=subset(monterey_df,select=-c(County,Year))
+monterey_cor=print(cor(monterey_df))
 
 
-test=subset(prod_drought,select=-c(County,Year))
+################WHY NOT WORKING??####################
 
-numeric_df=prod_drought%>% mutate(drought = as.numeric(drought))
+numeric_df=prod_drought%>% 
+  mutate(drought = as.numeric(drought))%>%
+  group_by(County)%>%
+  select(Avg_Depth:drought)%>%
+  summarise()
 
-cor_all2=prod_drought %>% 
+
+cor_all2=as_tibble(prod_drought) %>% 
   mutate(drought = as.numeric(drought)) %>% 
   group_by(County) %>%
-  select(prod_drought,Avg_Depth:drought) %>% 
-  summarize()
-
-
-  cor()
-
+  select(cor_all2,Avg_Depth:drought) %>% 
+  summarize()%>% 
+  ungroup
 
 
 
-
-#Run LM for each county and interpret (Shaela)
-
-
-#RUNNING A CORRELATION WITH DROUGHT VARIABLE?
-#VISUALIZING THE MULTIVARIATE REGRESSION, POSSIBLE?
-#SHOULD WE RUN A CORRELATION/LM FOR DROUGHT VS GROUNDWATER LEVEL? POSSIBLE SINCE ONE IS A CATEGORICAL/FACTOR VARIABLE?
-  
-  
-#NOTES FROM MEETING WITH EVAN
-#Our hypothesis is as groundwater drops, ag production value drops - depth should be on x axis
-  #add column with code for whtehr it's drought or non-drought (using mutate function)
-#How values change in drought vs wet periods - mutate(drought=ifelse(year>2011 & year<2015,1,0))
-  #multiple regression: change in depth (ind), drought vs wet year (ind),((y=a+b1x1+b2x2))
-  #interaction effects: y=a+b1x1+b2x2+b3x1*x2 (ie does drought have impact on value and ) --> lm(formula=y~x1*x2)
-  #y=a+b1x1
-
-#sometimes aggregating data can reverse the dirction - "Simpsons Paradox"
-  #include in discussion: discuss alternatve explanations/hypotheses
+#how good was my model...use glance() - look for R2,adjusted R2,p values, F statistic
   
 
-#GOING ABOVE & BEYOND (not needed for this project but if we wanted to continue this in future): mixed effects models / heirarchaal models - lme4 package - if there are few data points (maybe sampling error)
+
   
   
 #Drought vs non-drought plots by county have fitted lines don't show interaction effects

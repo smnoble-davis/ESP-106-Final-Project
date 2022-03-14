@@ -1,6 +1,7 @@
 #read in ag crop production data files 2009-2020
 library(tidyverse)
 library(stringr)
+library(viridis)
 setwd("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production")
 
 #Set Directory so that if you gave one folder with all your data, someone could read in each data set by only chaning the set directory at the top.
@@ -392,6 +393,7 @@ YrCountyBoxplot=print(
   ggplot(county_yr_total,aes(y=Value_sum,fill=County))+
   geom_boxplot()+
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+  scale_fill_viridis(option="C", discrete=TRUE)+
   ggtitle("Gross Crop Production Value (2009-2020)")+
   theme(plot.title = element_text(face="bold"),
         axis.ticks.x=element_blank(),
@@ -402,6 +404,7 @@ YrCountyBar=print(
     geom_bar(position="stack",stat="identity")+
     scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
     scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    scale_fill_viridis(option="C", discrete=TRUE)+
     ggtitle("Counties' Share of Gross Crop Production Value")+
     theme(plot.title = element_text(face="bold"))
 )
@@ -410,6 +413,7 @@ YrCountyBar=print(
 YrCountyLine=print(
   ggplot(county_yr_total,aes(Year,Value_sum,group=County,color=County))+
   ggtitle("Gross Crop Production Value (2009-2020)")+
+  scale_color_viridis(option="C", discrete=TRUE)+
   geom_line()+
   geom_point()+
   scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
@@ -432,14 +436,4 @@ EachCounty=
 #Save the 2 compiled ag dataframes as objects so you can call them later and use in other R scripts
 save(county_yr_total,file="TotalProduction.Rdata")
 save(allag,file="5Counties_AllCrops.Rdata")
-
-#NEED TO DO
-#Run a linear regression of production value and year? (lm(value~year,data=county_yr_total).How to interpret...
-#how good was my model...use glance() - look for R2,adjusted R2,p values, F statistic
-
-
-#RELATIONSHIP BETWEEN WELL DEPTH AND CROP VALUE PER WELL BUFFER ZONES IN 2015
-#CALL WHAT CROPS FALL WITHIN BUFFER ZONES FOR KERN COUNTY BECAUSE WE SEE A DROP
-#SUBSET THE AG DATA TO ONLY SHOW THOSE CROPS AND CALCULATE TOTAL VALUE FOR EACH CROP AND COMPARE IF THERE'S A SIG CHANGE SINCE 2009
-
 
