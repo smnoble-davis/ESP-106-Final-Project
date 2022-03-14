@@ -1,7 +1,7 @@
 #AUTHORS: SHAELA NOBLE & CHRISTINA HARRINGTON
 
 
-#SECTION 1: WRANGLING/CLEANING AGRICULTURAL DATA
+##SECTION 1: WRANGLING/CLEANING AGRICULTURAL DATA
 #read in ag crop production data files 2009-2020
 library(tidyverse)
 library(stringr)
@@ -439,19 +439,263 @@ save(allag,file="5Counties_AllCrops.Rdata")
 
 
 
-#SECTION 2: WRANGLING/CLEANING GROUNDWATER DATA
+##SECTION 2: WRANGLING/CLEANING GROUNDWATER DATA
 
+#Load required packages, set working directory, and read in .csv files for all 5 counties
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
+library(lubridate)
+setwd("/Users/shaelanoble/Documents/GitHub/ESP-106-Final-Project/Groundwater")
 
+kern_casgem <- read.csv("Kern_CASGEM_WellElevationData.csv")
+fresno_casgem <- read.csv("Fresno_CASGEM_WellElevationData.csv")
+merced_casgem <- read.csv("Merced_CASGEM_WellElevationData.csv")
+monterey_casgem <- read.csv("Monterey_CASGEM_WellElevationData.csv")
+tulare_casgem <- read.csv("Tulare_CASGEM_WellElevationData.csv")
 
+#Add a column to all data frames for the identity of the county
+kern_casgem$County <- "Kern"
+fresno_casgem$County <- "Fresno"
+merced_casgem$County <- "Merced"
+monterey_casgem$County <- "Monterey"
+tulare_casgem$County <- "Tulare"
 
+#Convert the date column to a date format
+kern_casgem$Date <- as.Date(kern_casgem$Date, format = "%m/%d/%Y")
+fresno_casgem$Date <- as.Date(fresno_casgem$Date, format = "%m/%d/%Y")
+merced_casgem$Date <- as.Date(merced_casgem$Date, format = "%m/%d/%Y")
+monterey_casgem$Date <- as.Date(monterey_casgem$Date, format = "%m/%d/%Y")
+tulare_casgem$Date <- as.Date(tulare_casgem$Date, format = "%m/%d/%Y")
 
+#Change RPtoWS values to (-) as they represent depth to groundwater and will be visualized as negative values
+kern_casgem$RPtoWS <- kern_casgem$RPtoWS*(-1)
+fresno_casgem$RPtoWS <- fresno_casgem$RPtoWS*(-1)
+merced_casgem$RPtoWS <- merced_casgem$RPtoWS*(-1)
+monterey_casgem$RPtoWS <- monterey_casgem$RPtoWS*(-1)
+tulare_casgem$RPtoWS <- tulare_casgem$RPtoWS*(-1)
 
-#SECTION 3: MERGING & ANALYZING DATA
+#Identify incorrectly entered measurements (only found in Kern - 4 measurements and Monterey - 1 measurement). Measurements were likely entered incorrectly as all measurements should have initially been entered as a positive value. 
+kern_positive <- kern_casgem[which(kern_casgem$RPtoWS>0,),]
+monterey_positive <- monterey_casgem[which(monterey_casgem$RPtoWS>0,),]
+
+#Change (+) measurements to (-) measurements
+kern_casgem["365", 9] = -285.7
+kern_casgem["1621", 9] = -1
+kern_casgem["2026", 9] = -301.9
+kern_casgem["2279", 9] = -104.7
+monterey_casgem["654", 9] = -4
+
+#Exploratory plots of all 5 counties 
+kern <- ggplot(kern_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Kern County") + ylab("Depth to Groundwater (ft)")
+kern
+fresno <- ggplot(fresno_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Fresno County") + ylab("Depth to Groundwater (ft)")
+fresno
+merced <- ggplot(merced_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Merced County") + ylab("Depth to Groundwater (ft)")
+merced
+monterey <- ggplot(monterey_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Monterey County") + ylab("Depth to Groundwater (ft)")
+monterey
+tulare <- ggplot(tulare_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Tulare County") + ylab("Depth to Groundwater (ft)")
+tulare
+
+#Remove outliers >2.5 standard deviations away from the mean within each set of measurements from a well
+kern_elim = kern_casgem %>%
+  group_by(MasterSiteCode) %>%
+  filter(!((RPtoWS - mean(RPtoWS, na.rm=TRUE)) > 2.5*sd(RPtoWS, na.rm=TRUE)))
+fresno_elim = fresno_casgem %>%
+  group_by(MasterSiteCode) %>%
+  filter(!((RPtoWS - mean(RPtoWS, na.rm=TRUE)) > 2.5*sd(RPtoWS, na.rm=TRUE)))
+merced_elim = merced_casgem %>%
+  group_by(MasterSiteCode) %>%
+  filter(!((RPtoWS - mean(RPtoWS, na.rm=TRUE)) > 2.5*sd(RPtoWS, na.rm=TRUE)))
+monterey_elim = monterey_casgem %>%
+  group_by(MasterSiteCode) %>%
+  filter(!((RPtoWS - mean(RPtoWS, na.rm=TRUE)) > 2.5*sd(RPtoWS, na.rm=TRUE)))
+tulare_elim = tulare_casgem %>%
+  group_by(MasterSiteCode) %>%
+  filter(!((RPtoWS - mean(RPtoWS, na.rm=TRUE)) > 2.5*sd(RPtoWS, na.rm=TRUE)))
+
+#Plots for all 5 counties with outliers removed
+kern_e <- ggplot(kern_elim, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Kern County")
+kern_e
+fresno_e <- ggplot(fresno_elim, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Fresno County")
+fresno_e
+merced_e <- ggplot(merced_elim, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Merced County")
+merced_e
+monterey_e <- ggplot(monterey_elim, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Monterey County")
+monterey_e
+tulare_e <- ggplot(tulare_elim, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("Tulare County")
+tulare_e
+
+#It is difficult to see how the groundwater table is changing across the counties since each well is hydrologically different with a different standard depth to water. 
+#By setting the maximum height observed within each well as the reference height of "0", we can see how the groundwater table is changing within the wells in reference to each other.
+#Find reference heights for wells in all 5 counties
+kern_height <- aggregate(RPtoWS ~ MasterSiteCode, kern_elim, function(x) max(x))
+fresno_height <- aggregate(RPtoWS ~ MasterSiteCode, fresno_elim, function(x) max(x))
+merced_height <- aggregate(RPtoWS ~ MasterSiteCode, merced_elim, function(x) max(x))
+monterey_height <- aggregate(RPtoWS ~ MasterSiteCode, monterey_elim, function(x) max(x))
+tulare_height <- aggregate(RPtoWS ~ MasterSiteCode, tulare_elim, function(x) max(x))
+
+#Rename columns
+colnames(kern_height) <- c("MasterSiteCode", "max_h")
+kern_elim <- merge(kern_elim, kern_height, by= "MasterSiteCode")
+colnames(fresno_height) <- c("MasterSiteCode", "max_h")
+fresno_elim <- merge(fresno_elim, fresno_height, by= "MasterSiteCode")
+colnames(merced_height) <- c("MasterSiteCode", "max_h")
+merced_elim <- merge(merced_elim, merced_height, by= "MasterSiteCode")
+colnames(monterey_height) <- c("MasterSiteCode", "max_h")
+monterey_elim <- merge(monterey_elim, monterey_height, by= "MasterSiteCode")
+colnames(tulare_height) <- c("MasterSiteCode", "max_h")
+tulare_elim <- merge(tulare_elim, tulare_height, by= "MasterSiteCode")
+
+#Standardize all measurements within a well to the reference height
+kern_elim <- kern_elim %>% 
+  group_by(MasterSiteCode) %>%
+  mutate(depth_std = RPtoWS - max_h) %>%
+  ungroup()
+fresno_elim <- fresno_elim %>% 
+  group_by(MasterSiteCode) %>%
+  mutate(depth_std = RPtoWS - max_h) %>%
+  ungroup()
+merced_elim <- merced_elim %>% 
+  group_by(MasterSiteCode) %>%
+  mutate(depth_std = RPtoWS - max_h) %>%
+  ungroup()
+monterey_elim <- monterey_elim %>% 
+  group_by(MasterSiteCode) %>%
+  mutate(depth_std = RPtoWS - max_h) %>%
+  ungroup()
+tulare_elim <- tulare_elim %>% 
+  group_by(MasterSiteCode) %>%
+  mutate(depth_std = RPtoWS - max_h) %>%
+  ungroup()
+
+#Plot the standardized data
+kern_std <- ggplot(kern_elim, aes(x=Date, y=depth_std, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=depth_std)) + ggtitle("Kern County")
+kern_std
+fresno_std <- ggplot(fresno_elim, aes(x=Date, y=depth_std, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=depth_std)) + ggtitle("Fresno County")
+fresno_std
+merced_std <- ggplot(merced_elim, aes(x=Date, y=depth_std, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=depth_std)) + ggtitle("Merced County")
+merced_std
+monterey_std <- ggplot(monterey_elim, aes(x=Date, y=depth_std, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=depth_std)) + ggtitle("Monterey County")
+monterey_std
+tulare_std <- ggplot(tulare_elim, aes(x=Date, y=depth_std, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=Date, y=depth_std)) + ggtitle("Tulare County")
+tulare_std
+
+#The agricultural data is in a County-Year format therefore we need to aggregate the groundwater measurements up to the year level 
+#Aggregate measurements up by year - add a year column
+kern_elim$Year <- as.numeric(format(kern_elim$Date, "%Y"))
+fresno_elim$Year <- as.numeric(format(fresno_elim$Date, "%Y"))
+merced_elim$Year <- as.numeric(format(merced_elim$Date, "%Y"))
+monterey_elim$Year <- as.numeric(format(monterey_elim$Date, "%Y"))
+tulare_elim$Year <- as.numeric(format(tulare_elim$Date, "%Y"))
+
+#Create a new data frame for average depth per year 
+kern_apy <- aggregate(kern_elim$depth_std, by=list(year=kern_elim$Year), FUN=mean, na.rm=TRUE)
+fresno_apy <- aggregate(fresno_elim$depth_std, by=list(year=fresno_elim$Year), FUN=mean, na.rm=TRUE)
+merced_apy <- aggregate(merced_elim$depth_std, by=list(year=merced_elim$Year), FUN=mean, na.rm=TRUE)
+monterey_apy <- aggregate(monterey_elim$depth_std, by=list(year=monterey_elim$Year), FUN=mean, na.rm=TRUE)
+tulare_apy <- aggregate(tulare_elim$depth_std, by=list(year=tulare_elim$Year), FUN=mean, na.rm=TRUE)
+
+#Add "county" column to apy data frames
+kern_apy$County <-"Kern"
+fresno_apy$County <-"Fresno"
+merced_apy$County <-"Merced"
+monterey_apy$County <-"Monterey"
+tulare_apy$County <-"Tulare"
+
+#Plot change in average standardized depth to groundwater across time for each county
+agg_kern <- ggplot(kern_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Kern County") + xlab("Year") + ylab("Average Depth to Groundwater")
+agg_kern
+agg_fresno <- ggplot(fresno_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Fresno County") + xlab("Year") + ylab("Average Depth to Groundwater")
+agg_fresno
+agg_merced <- ggplot(merced_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Merced County") + xlab("Year") + ylab("Average Depth to Groundwater")
+agg_merced
+agg_monterey <- ggplot(monterey_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Monterey County") + xlab("Year") + ylab("Average Depth to Groundwater")
+agg_monterey
+agg_tulare <- ggplot(tulare_apy, aes(x=year, y=x)) + geom_point() + theme(legend.position = "none") + geom_line(aes(x=year, y=x)) + ggtitle("Tulare County") + xlab("Year") + ylab("Average Depth to Groundwater")
+agg_tulare
+
+#Code for Figure 1 showing data cleaning and aggregation process for Kern County
+kern <- ggplot(kern_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + th + guides(col=FALSE) + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("(A) Kern County Well Measurements") + ylab("Depth to Groundwater (ft)") + xlab("Year")
+kern
+kern_e <- ggplot(kern_elim, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + th + guides(col=FALSE) + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("(B) Kern County Well Measurements (Outliers Removed)") + ylab("Depth to Groundwater (ft)") + xlab("Year")
+kern_e
+kern_std <- ggplot(kern_elim, aes(x=Date, y=depth_std, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + th + guides(col=FALSE) + geom_line(aes(x=Date, y=depth_std)) + ggtitle("(C) Kern County Well Measurements (Standardized)") + ylab("Depth to Groundwater (ft)") + xlab("Year")
+kern_std
+agg_kern <- ggplot(kern_apy, aes(x=year, y=x)) + geom_point() + th + guides(col=FALSE) + geom_line(aes(x=year, y=x)) + ggtitle("(D) Kern County") + xlab("Year") + ylab("Average Depth to Groundwater (ft)")
+agg_kern
+grid.arrange(kern, kern_e, kern_std, agg_kern)
+
+#Combine apy data frames and rename columns
+apy_all <- do.call("rbind", list(kern_apy, fresno_apy, merced_apy, monterey_apy, tulare_apy))
+colnames(apy_all) <- c("Year", "Avg_Depth", "County")
+
+#Save apy_all dataframe as an rfile to load in later
+save(apy_all, file="apy_all.RData")
+
+##SECTION 3: MERGING & ANALYZING DATA
 
 setwd("/Users/christinaharrington/Desktop/ESP-106-Final-Project")
 load("Groundwater/apy_all.RData")
 load("Ag Production/TotalProduction.Rdata")
 
+#merge county_yr_total and apy_all
+merged_data <- merge(county_yr_total, apy_all, by = c("County", "Year"))
+
+#add in a column that codes for drought based on emergency drought proclamation status
+merged_data <- merged_data %>%
+  mutate(drought=ifelse(Year==2009 | between(Year, 2012,2016),1,0))
+
+#Convert the year column to a date format 
+merged_data$Year <- ymd(merged_data$Year, truncated=2)
+
+#Convert drought data to factor format
+merged_data$drought <- as.factor(merged_data$drought)
+
+#Code for figure 2 (boxplots showing the association between groundwater depth and drought across counties and boxplot showing the association between agricultural production and drought across counties.)
+th <- theme_bw()
+
+drought_bp_county <- ggplot(merged_data, aes(x=drought, y=Value_sum, fill=County)) + 
+  geom_boxplot() + th + scale_y_continuous(labels = comma) + scale_x_discrete(labels = c("Non-drought", "Drought")) + xlab("Year") + ylab("Gross Production Value ($1000)") +scale_fill_viridis(option="C", discrete = TRUE) + ggtitle("(B) Agricultural Production in Non-Drought and Drought Years")
+drought_bp_county
+depthvdrought_county <- ggplot(merged_data, aes(x=drought, y=Avg_Depth, fill=County)) + 
+  geom_boxplot() + th + scale_y_continuous(labels = comma) + scale_x_discrete(labels = c("Non-drought", "Drought")) + xlab("Year") + ylab("Depth to Groundwater (ft)") +scale_fill_viridis(option="C", discrete = TRUE) + ggtitle("(A) Depth to Groundwater in Non-Drought and Drought Years")
+depthvdrought_county 
+grid.arrange(depthvdrought_county, drought_bp_county, ncol=2)
+
+##Investigating variable seperately
+#Regression for groundwater depth and drought across all data
+groundvdrought <- lm(Avg_Depth~drought, data=merged_data)
+summary(groundvdrought)
+
+#Regressions for groundwater depth and drought per county
+groundvdrought_models <- merged_data %>%
+  group_split(County) %>%
+  map(function(d) lm(Avg_Depth~drought,data=d))
+
+#Regression for agricultural production and drought across all data
+agvdrought <- lm(Value_sum~drought, data=merged_data)
+summary(avgvdrought)
+
+#Regressions for agricultural production and drought per county
+agvdrought_models <- merged_data %>%
+  group_split(County) %>%
+  map(function(d) lm(Value_sum~drought,data=d))
+
+#Run linear regression model for all variables (non-interacting)
+model <- lm(Value_sum~Avg_Depth + drought, data=merged_data)
+
+#Run regression for each county (non-interacting variables)
+linear_models <- merged_data %>%
+  group_split(County) %>%
+  map(function(d) lm(Value_sum~Avg_Depth+drought,data=d))
+
+#Plot for figure 3 - multivariate regression across all data
+regression_all <- ggplot(merged_data, aes(x=Avg_Depth, y=Value_sum, color=factor(drought)), label=scales::comma) + geom_point() + geom_smooth(method = "lm") + xlab("Depth to Groundwater (ft)") + ylab("Gross Production Value ($1000)") + th + scale_y_continuous(label=scales::comma) + scale_color_discrete(type=c("#5ab4ac", "#d8b365"), name = "Year", labels = c("Non-Drought", "Drought")) + ggtitle("Relationship Between Agricultural Production and Groundwater Depth")
+
+#Plot for figure 4 - multivariate regression per county
+regression_county <- ggplot(merged_data, aes(x=Avg_Depth, y=Value_sum, color=factor(drought)), label=scales::comma) + geom_point() + geom_smooth(method = "lm") + xlab("Depth to Groundwater (ft)") + ylab("Gross Production Value ($1000)") + th + scale_y_continuous(label=scales::comma) + scale_color_discrete(type=c("#5ab4ac", "#d8b365"), name = "Year", labels = c("Non-Drought", "Drought"))+facet_wrap(~County, scales = "free")
 
 
 
