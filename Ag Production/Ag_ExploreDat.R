@@ -386,7 +386,7 @@ county_yr_total=allag %>%
   group_by(County,Year) %>%
   summarize(Value_sum = sum(Value)/1000)
 
-#Produce exploratory data for the new dataframe
+#Produce exploratory plots showing the distribution of production value over the years and how much each county contributes to overall production.
 YrCounty_Valuesummary=print(summary(county_yr_total$Value_sum))
 
 YrCountyBoxplot=print(
@@ -395,9 +395,12 @@ YrCountyBoxplot=print(
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
   scale_fill_viridis(option="C", discrete=TRUE)+
   ggtitle("Gross Crop Production Value (2009-2020)")+
+  theme_bw()+
   theme(plot.title = element_text(face="bold"),
-        axis.ticks.x=element_blank(),
-        axis.text.x=element_blank()))
+          axis.ticks.x=element_blank(),
+          axis.text.x=element_blank())
+  )
+
 
 YrCountyBar=print(
   ggplot(county_yr_total,aes(Year,Value_sum,fill=County))+
@@ -406,6 +409,7 @@ YrCountyBar=print(
     scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
     scale_fill_viridis(option="C", discrete=TRUE)+
     ggtitle("Counties' Share of Gross Crop Production Value")+
+    theme_bw()+
     theme(plot.title = element_text(face="bold"))
 )
 
@@ -418,10 +422,11 @@ YrCountyLine=print(
   geom_point()+
   scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+  theme_bw()+
   theme(plot.title = element_text(face="bold")))
 
 
-#Plot each county's production values over time
+#Plot each county separately, to see their production values over time more clearly
 EachCounty=
   ggplot(county_yr_total,aes(Year,Value_sum))+
   facet_wrap(~County)+  
@@ -430,6 +435,7 @@ EachCounty=
     geom_point()+
     scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
     scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    theme_bw()+
     theme(plot.title = element_text(face="bold"))
 
 

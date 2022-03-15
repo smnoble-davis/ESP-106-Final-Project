@@ -1,13 +1,19 @@
 #AUTHORS: SHAELA NOBLE & CHRISTINA HARRINGTON
 
+#Load in the the packages we'll be using for wrangling and plotting
+library(viridis)
+library(tidyverse)
+library(stringr)
+library(corrplot)
+library(lubridate)
+library(ggplot2)
+library(dplyr)
+library(gridExtra)
 
 ##SECTION 1: WRANGLING/CLEANING AGRICULTURAL DATA
 #read in ag crop production data files 2009-2020
-library(tidyverse)
-library(stringr)
-setwd("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production")
 
-#Set Directory so that if you gave one folder with all your data, someone could read in each data set by only chaning the set directory at the top.
+setwd("/Users/christinaharrington/Desktop/ESP-106-Final-Project/Ag Production")
 
 #For all data sets for years 2009-2020, write subset function so we only see data for the 5 counties of interest: Fresno, Kern, Monterey, Merced and Tulare.
 #Remove crops that aren't produce or feed (e.g. hay) by finding all crops that contain the words: apiary, cattle, fish, hogs, chickens, eggs, livestock, manure, milk, poultry, sheep, turkeys, wool, flowers, forest products, nursery products, pasture, silage, ostrich,birds,goats (str_detect from stringr package)
@@ -383,30 +389,35 @@ harvest_summary=print(summary(allag$Harvested.Acres))
 #We're interested in the total value of production for each county in each year. 
 #Create data frame that has columns Year, County, Total Value only. We need to sum the value of all crops for each county per year.
 #The total production values will be high (in the billions), so far clarity on the graph, divide the value by 1000.
-#Use 'group_by' and 'summarize' functions in dplyr
 
 county_yr_total=allag %>%
   group_by(County,Year) %>%
   summarize(Value_sum = sum(Value)/1000)
 
-#Produce exploratory data for the new dataframe
+#Produce exploratory plots showing the distribution of production value over the years and how much each county contributes to overall production.
 YrCounty_Valuesummary=print(summary(county_yr_total$Value_sum))
 
 YrCountyBoxplot=print(
   ggplot(county_yr_total,aes(y=Value_sum,fill=County))+
     geom_boxplot()+
     scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    scale_fill_viridis(option="C", discrete=TRUE)+
     ggtitle("Gross Crop Production Value (2009-2020)")+
+    theme_bw()+
     theme(plot.title = element_text(face="bold"),
           axis.ticks.x=element_blank(),
-          axis.text.x=element_blank()))
+          axis.text.x=element_blank())
+)
+
 
 YrCountyBar=print(
   ggplot(county_yr_total,aes(Year,Value_sum,fill=County))+
     geom_bar(position="stack",stat="identity")+
     scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
     scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    scale_fill_viridis(option="C", discrete=TRUE)+
     ggtitle("Counties' Share of Gross Crop Production Value")+
+    theme_bw()+
     theme(plot.title = element_text(face="bold"))
 )
 
@@ -414,14 +425,16 @@ YrCountyBar=print(
 YrCountyLine=print(
   ggplot(county_yr_total,aes(Year,Value_sum,group=County,color=County))+
     ggtitle("Gross Crop Production Value (2009-2020)")+
+    scale_color_viridis(option="C", discrete=TRUE)+
     geom_line()+
     geom_point()+
     scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
     scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+    theme_bw()+
     theme(plot.title = element_text(face="bold")))
 
 
-#Plot each county's production values over time
+#Plot each county separately, to see their production values over time more clearly
 EachCounty=
   ggplot(county_yr_total,aes(Year,Value_sum))+
   facet_wrap(~County)+  
@@ -430,10 +443,10 @@ EachCounty=
   geom_point()+
   scale_x_continuous(name="Production Year",breaks=c(2009:2020))+
   scale_y_continuous(name="Gross Production Value ($1000)",labels=scales::comma)+
+  theme_bw()+
   theme(plot.title = element_text(face="bold"))
 
-
-#Save the 2 compiled ag dataframes as objects so you can call them later and use in other R scripts
+#Save the 2 compiled agriculture data frames as objects so you can call them later and use in other R scripts
 save(county_yr_total,file="TotalProduction.Rdata")
 save(allag,file="5Counties_AllCrops.Rdata")
 
@@ -441,12 +454,8 @@ save(allag,file="5Counties_AllCrops.Rdata")
 
 ##SECTION 2: WRANGLING/CLEANING GROUNDWATER DATA
 
-#Load required packages, set working directory, and read in .csv files for all 5 counties
-library(ggplot2)
-library(dplyr)
-library(gridExtra)
-library(lubridate)
-library(viridis)
+#Set working directory and read in .csv files for all 5 counties
+
 setwd("/Users/shaelanoble/Documents/GitHub/ESP-106-Final-Project/Groundwater")
 
 kern_casgem <- read.csv("Kern_CASGEM_WellElevationData.csv")
@@ -637,7 +646,8 @@ save(apy_all, file="apy_all.RData")
 
 ##SECTION 3: MERGING & ANALYZING DATA
 
-setwd("/Users/christinaharrington/Desktop/ESP-106-Final-Project")
+#Load in the cleaned/merged data frame objects for groundwater and crop production
+
 load("Groundwater/apy_all.RData")
 load("Ag Production/TotalProduction.Rdata")
 
@@ -654,7 +664,7 @@ merged_data$Year <- ymd(merged_data$Year, truncated=2)
 #Convert drought data to factor format
 merged_data$drought <- as.factor(merged_data$drought)
 
-#Code for figure 2 (boxplots showing the association between groundwater depth and drought across counties and boxplot showing the association between agricultural production and drought across counties.)
+#(Code for Figure 4) Boxplots showing the association between groundwater depth and drought across counties and boxplot showing the association between agricultural production and drought across counties.
 th <- theme_bw()
 
 drought_bp_county <- ggplot(merged_data, aes(x=drought, y=Value_sum, fill=County)) + 
@@ -665,7 +675,7 @@ depthvdrought_county <- ggplot(merged_data, aes(x=drought, y=Avg_Depth, fill=Cou
 depthvdrought_county 
 grid.arrange(depthvdrought_county, drought_bp_county, ncol=2)
 
-##Investigating variable seperately
+##Investigating variable separately
 #Regression for groundwater depth and drought across all data
 groundvdrought <- lm(Avg_Depth~drought, data=merged_data)
 summary(groundvdrought)
@@ -692,12 +702,72 @@ linear_models <- merged_data %>%
   group_split(County) %>%
   map(function(d) lm(Value_sum~Avg_Depth*drought,data=d))
 
-#Plot for figure 3 - multivariate regression across all data
+#Plot for figure 5 - multivariate regression across all data
 regression_all <- ggplot(merged_data, aes(x=Avg_Depth, y=Value_sum, color=factor(drought)), label=scales::comma) + geom_point() + geom_smooth(method = "lm") + xlab("Depth to Groundwater (ft)") + ylab("Gross Production Value ($1000)") + th + scale_y_continuous(label=scales::comma) + scale_color_discrete(type=c("#5ab4ac", "#d8b365"), name = "Year", labels = c("Non-Drought", "Drought")) + ggtitle("Relationship Between Agricultural Production and Groundwater Depth")
 
-#Plot for figure 4 - multivariate regression per county
+#Plot for figure 6 - multivariate regression per county
 regression_county <- ggplot(merged_data, aes(x=Avg_Depth, y=Value_sum, color=factor(drought)), label=scales::comma) + geom_point() + geom_smooth(method = "lm") + xlab("Depth to Groundwater (ft)") + ylab("Gross Production Value ($1000)") + th + scale_y_continuous(label=scales::comma) + scale_color_discrete(type=c("#5ab4ac", "#d8b365"), name = "Year", labels = c("Non-Drought", "Drought"))+facet_wrap(~County, scales = "free")
 
+
+#Run a correlation of groundwater depth, production value, and drought for all 5 counties aggregated and plot it.
+#To run the correlation, all variables must be numeric, so you'll have to remove the County and Year columns.The drought variable is currently a factor, so convert to numeric.
+
+merged_data$drought=as.numeric(merged_data$drought)
+
+
+cor_counties=subset(merged_data,select=-c(County,Year))
+colnames(cor_counties)=c("Mean Depth","Prod. Value","Drought")
+cor_countiesfinal=print(cor(cor_counties))
+counties_corplot=corrplot(cor_countiesfinal,tl.col="black",tl.cex=1)
+title("Counties Aggregated")
+
+#Run a correlation for each of the 5 counties and plot them.
+
+#Kern Correlations
+
+kern_df=subset(merged_data,County=="Kern")
+kern_df=subset(kern_df,select=-c(County,Year))
+colnames(kern_df)=c("Mean Depth","Prod. Value","Drought")
+kern_cor=print(cor(kern_df))
+kern_plot=corrplot(kern_cor,tl.col="black",tl.cex=1)
+title("Kern County")
+
+#Fresno Correlations
+
+fresno_df=subset(merged_data,County=="Fresno")
+fresno_df=subset(fresno_df,select=-c(County,Year))
+colnames(fresno_df)=c("Mean Depth","Prod. Value","Drought")
+fresno_cor=print(cor(fresno_df))
+fres_plot=corrplot(fresno_cor,tl.col="black",tl.cex=1)
+title("Fresno County")
+
+#Merced Correlations
+
+merced_df=subset(merged_data,County=="Merced")
+merced_df=subset(merced_df,select=-c(County,Year))
+colnames(merced_df)=c("Mean Depth","Prod. Value","Drought")
+merced_cor=print(cor(merced_df))
+mer_plot=corrplot(merced_cor,tl.col="black",tl.cex=1)
+title("Merced County")
+
+
+#Tulare Correlations
+
+tulare_df=subset(merged_data,County=="Tulare")
+tulare_df=subset(tulare_df,select=-c(County,Year))
+colnames(tulare_df)=c("Mean Depth","Prod. Value","Drought")
+tulare_cor=print(cor(tulare_df))
+tul_plot=corrplot(tulare_cor,tl.col="black",tl.cex=1)
+title("Tulare County")
+
+#Monterey Correlations
+
+monterey_df=subset(merged_data,County=="Monterey")
+monterey_df=subset(monterey_df,select=-c(County,Year))
+colnames(monterey_df)=c("Mean Depth","Prod. Value","Drought")
+monterey_cor=print(cor(monterey_df))
+mont_plot=corrplot(monterey_cor,tl.col="black",tl.cex=1)
+title("Monterey County")
 
 
 
