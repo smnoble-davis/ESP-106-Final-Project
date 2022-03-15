@@ -22,78 +22,59 @@ prod_drought$drought=as_factor(prod_drought$drought)
 prod_drought$Year=ymd(prod_drought$Year,truncated=2)
 
 
-#Run a correlation of groundwater depth, production value, and drought for all 5 counties
-cor_all=print(cor(x=prod_drought$Avg_Depth,y=prod_drought$Value_sum))
-
+#Run a correlation of groundwater depth, production value, and drought for all 5 counties aggregated. The drought variable is currently a factor, so convert to numeric.
 prod_drought$drought=as.numeric(prod_drought$drought)
+
 cor_counties=subset(prod_drought,select=-c(County,Year))
+colnames(cor_counties)=c("Mean Depth","Prod. Value","Drought")
 cor_countiesfinal=print(cor(cor_counties))
+counties_corplot=corrplot(cor_countiesfinal,tl.col="black",tl.cex=1)
+                          title("Counties Aggregated")
 
-#The coefficient -0.35 indicates there's a negative relationship between groundwater depth and production value, but it's not a very strong relationship.
-#This suggests that across all five counties, as the groundwater depth lowers, gross production value increases.
-
-#Run a correlation for each of the 5 counties (Christina)
+#Run a correlation for each of the 5 counties and plot them.
 
 #Kern Correlations
 
 kern_df=subset(prod_drought,County=="Kern")
 kern_df=subset(kern_df,select=-c(County,Year))
+colnames(kern_df)=c("Mean Depth","Prod. Value","Drought")
 kern_cor=print(cor(kern_df))
+kern_plot=corrplot(kern_cor,tl.col="black",tl.cex=1)
+                   title("Kern County")
 
 #Fresno Correlations
 
 fresno_df=subset(prod_drought,County=="Fresno")
 fresno_df=subset(fresno_df,select=-c(County,Year))
+colnames(fresno_df)=c("Mean Depth","Prod. Value","Drought")
 fresno_cor=print(cor(fresno_df))
+fres_plot=corrplot(fresno_cor,tl.col="black",tl.cex=1)
+         title("Fresno County")
 
 #Merced Correlations
 
 merced_df=subset(prod_drought,County=="Merced")
 merced_df=subset(merced_df,select=-c(County,Year))
+colnames(merced_df)=c("Mean Depth","Prod. Value","Drought")
 merced_cor=print(cor(merced_df))
+mer_plot=corrplot(merced_cor,tl.col="black",tl.cex=1)
+         title("Merced County")
 
 
 #Tulare Correlations
 
 tulare_df=subset(prod_drought,County=="Tulare")
 tulare_df=subset(tulare_df,select=-c(County,Year))
+colnames(tulare_df)=c("Mean Depth","Prod. Value","Drought")
 tulare_cor=print(cor(tulare_df))
+tul_plot=corrplot(tulare_cor,tl.col="black",tl.cex=1)
+         title("Tulare County")
 
 #Monterey Correlations
 
 monterey_df=subset(prod_drought,County=="Monterey")
 monterey_df=subset(monterey_df,select=-c(County,Year))
+colnames(monterey_df)=c("Mean Depth","Prod. Value","Drought")
 monterey_cor=print(cor(monterey_df))
-
-
-################WHY NOT WORKING??####################
-
-numeric_df=prod_drought%>% 
-  mutate(drought = as.numeric(drought))%>%
-  group_by(County)%>%
-  select(Avg_Depth:drought)%>%
-  summarise()
-
-
-cor_all2=as_tibble(prod_drought) %>% 
-  mutate(drought = as.numeric(drought)) %>% 
-  group_by(County) %>%
-  select(cor_all2,Avg_Depth:drought) %>% 
-  summarize()%>% 
-  ungroup
-
-
-
-#how good was my model...use glance() - look for R2,adjusted R2,p values, F statistic
-  
-
-
-  
-  
-#Drought vs non-drought plots by county have fitted lines don't show interaction effects
-#more valuable to report on the coefficient and standard error...avoid p values cuz 'trash stats for trash people'
-#standard errors +/- 2 standard deviations
-#coefficient values should be interpreted in light of the unit of the predictors and the range they spann
-
-#Don't need to report on the coefficient values in the final paper but we do care about their sign and relative magnitude 
-#R2 is correlated with correlation coefficients
+mont_plot=corrplot(monterey_cor,tl.col="black",tl.cex=1)
+         title("Monterey County")
