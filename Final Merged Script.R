@@ -446,6 +446,7 @@ library(ggplot2)
 library(dplyr)
 library(gridExtra)
 library(lubridate)
+library(viridis)
 setwd("/Users/shaelanoble/Documents/GitHub/ESP-106-Final-Project/Groundwater")
 
 kern_casgem <- read.csv("Kern_CASGEM_WellElevationData.csv")
@@ -684,12 +685,12 @@ agvdrought_models <- merged_data %>%
   map(function(d) lm(Value_sum~drought,data=d))
 
 #Run linear regression model for all variables (non-interacting)
-model <- lm(Value_sum~Avg_Depth + drought, data=merged_data)
+model <- lm(Value_sum~Avg_Depth*drought, data=merged_data)
 
 #Run regression for each county (non-interacting variables)
 linear_models <- merged_data %>%
   group_split(County) %>%
-  map(function(d) lm(Value_sum~Avg_Depth+drought,data=d))
+  map(function(d) lm(Value_sum~Avg_Depth*drought,data=d))
 
 #Plot for figure 3 - multivariate regression across all data
 regression_all <- ggplot(merged_data, aes(x=Avg_Depth, y=Value_sum, color=factor(drought)), label=scales::comma) + geom_point() + geom_smooth(method = "lm") + xlab("Depth to Groundwater (ft)") + ylab("Gross Production Value ($1000)") + th + scale_y_continuous(label=scales::comma) + scale_color_discrete(type=c("#5ab4ac", "#d8b365"), name = "Year", labels = c("Non-Drought", "Drought")) + ggtitle("Relationship Between Agricultural Production and Groundwater Depth")
