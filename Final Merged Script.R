@@ -9,6 +9,7 @@ library(lubridate)
 library(ggplot2)
 library(dplyr)
 library(gridExtra)
+library(scales)
 
 ##SECTION 1: WRANGLING/CLEANING AGRICULTURAL DATA
 #read in ag crop production data files 2009-2020
@@ -627,6 +628,7 @@ agg_tulare <- ggplot(tulare_apy, aes(x=year, y=x)) + geom_point() + theme(legend
 agg_tulare
 
 #Code for Figure 1 showing data cleaning and aggregation process for Kern County
+th <- theme_bw()
 kern <- ggplot(kern_casgem, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + th + guides(col=FALSE) + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("(A) Kern County Well Measurements") + ylab("Depth to Groundwater (ft)") + xlab("Year")
 kern
 kern_e <- ggplot(kern_elim, aes(x=Date, y=RPtoWS, col=MasterSiteCode,group=MasterSiteCode)) + geom_point() + th + guides(col=FALSE) + geom_line(aes(x=Date, y=RPtoWS)) + ggtitle("(B) Kern County Well Measurements (Outliers Removed)") + ylab("Depth to Groundwater (ft)") + xlab("Year")
@@ -687,7 +689,7 @@ groundvdrought_models <- merged_data %>%
 
 #Regression for agricultural production and drought across all data
 agvdrought <- lm(Value_sum~drought, data=merged_data)
-summary(avgvdrought)
+summary(agvdrought)
 
 #Regressions for agricultural production and drought per county
 agvdrought_models <- merged_data %>%
